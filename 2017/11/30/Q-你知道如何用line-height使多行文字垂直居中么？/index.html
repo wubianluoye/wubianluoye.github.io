@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>Archives: 2017 | wubianluoye</title>
+  <title>Q:你知道如何用line-height使多行文字垂直居中么？ | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,编程,代码,开源,IT网站,Developer,Coder,html,css,css3,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wubianluoye">
-<meta property="og:url" content="https://github.com/wubianluoye/archives/2017/index.html">
+  <meta name="description" content="我们先看运行效果：line-height实现一行或多行文字垂直居中 知识点">
+<meta name="keywords" content="css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Q:你知道如何用line-height使多行文字垂直居中么？">
+<meta property="og:url" content="https://github.com/wubianluoye/2017/11/30/Q-你知道如何用line-height使多行文字垂直居中么？/index.html">
 <meta property="og:site_name" content="wubianluoye">
+<meta property="og:description" content="我们先看运行效果：line-height实现一行或多行文字垂直居中 知识点">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-11-30T09:48:21.859Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wubianluoye">
+<meta name="twitter:title" content="Q:你知道如何用line-height使多行文字垂直居中么？">
+<meta name="twitter:description" content="我们先看运行效果：line-height实现一行或多行文字垂直居中 知识点">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -161,74 +165,71 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Q-你知道如何用line-height使多行文字垂直居中么？" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/30/多设备同步hexo博客/" class="archive-article-date">
-  	<time datetime="2017-11-30T09:25:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/30/多设备同步hexo博客/">多设备同步hexo博客</a>
+    <h1 class="article-title" itemprop="name">
+      Q:你知道如何用line-height使多行文字垂直居中么？
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/30/Q-你知道如何用line-height使多行文字垂直居中么？/" class="archive-article-date">
+        
+        <a href="/2017/11/30/Q-你知道如何用line-height使多行文字垂直居中么？/" class="archive-article-date">
   	<time datetime="2017-11-30T01:58:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/30/Q-你知道如何用line-height使多行文字垂直居中么？/">Q:你知道如何用line-height使多行文字垂直居中么？</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>我们先看运行效果：<br>line-height实现一行或多行文字垂直居中</p>
+<p>知识点</p>
+<a id="more"></a>
+<p>line-height（行高） : 指的是两行文字间基线之间的距离，而实际撑开div高度的不是height，而是line-height。</p>
+<p>line box : 每一行称为一条line box，它又是由这一行的许多inline box组成，它的高度可以直接由最大的line-height决定。很多条line box的高度垂直堆叠形成我们见到的div或是p标签之类的父元素高度了。</p>
+<p>无论line box所占据的高度是多少，其占据的空间都是与文字内容公用水平中垂线的。它的垂直居中的性质可以用来实现文字或图片的垂直居中对齐。</p>
+<p>行间距 - 行内框高度 ：行间距是font-size与line-height的差值，被分成两半在内容区的上下行内框高度（替换元素）=内容区宽度行内框高度（非替换元素）=line-height 了解更多替换元素非替换元素的区别点这</p>
+<p>一行文字垂直居中根据知识点3，现在可理解只设置行高后，内容区上下方自动填充行间距，使得文字垂直居中。</p>
+<p><code>&lt;p class=&quot;single_line&quot;&gt;这是一行文字这是一行文字这是一行文字&lt;/p&gt;.single_line{
+  line-height:150px; border:1px dashed #cccccc; padding-left:5px;font-size:12px;
+}</code><br>多行文字垂直居中要实现高度不固定的文字垂直居中使用padding就好了。对于高度固定的div，里面文字单行或多行显示，字体有大有小怎么办呢？可以借助于line-height。</p>
+<p><code>&lt;p class=&quot;mulit_line&quot;&gt;
+    &lt;span style=&quot;font-size:12px;&quot;&gt;这里是高度为150px的标签内的多行文字，文字大小为12像素。
+        &lt;br&gt;这里是第二行，用来测试多行的显示效果。
+    &lt;/span&gt;
+    &lt;i&gt;&amp;nbsp;&lt;/i&gt;
+&lt;/p&gt;</code></p>
+<p>inline-block属性使得外面包了一层line box。根据知识点2以及内联元素默认基线对齐，给span和i都设置为vertical-align:middle即可。实际应用中可将i的width设为0，案例中1px为了帮助理解用。</p>
+<p><code>.mulit_line{ 
+    border:1px dashed #cccccc; 
+    padding-left:5px;
+}
+.mulit_line span{ 
+    display:inline-block; 
+    line-height:14px; 
+    vertical-align:middle;
+}
+.mulit_line i{
+    width:1px; 
+    display:inline-block;
+    vertical-align:middle; 
+    font-size:0;
+    background:red;
+    line-height:150px;
+}</code></p>
+<p>看完整代码点这<br>更多内容欢迎互相交流一下。</p>
+<p>作者：Juicyangxj<br>链接：<a href="https://juejin.im/post/5a1cd142f265da431769e042" target="_blank" rel="noopener">https://juejin.im/post/5a1cd142f265da431769e042</a><br>来源：掘金<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
 
-        <div class="article-info info-on-right">
-          
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -240,95 +241,115 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAQ4AAAEOCAAAAABd2qZ5AAAD8ElEQVR42u3ay07EQAwEQP7/pxeJE4gldNsTHlLltApLkqkcvPb0y0t8PN6O958/n8n/6/MVkruceqoDBw4cOHDgCJZ6/bjXC75e5OZxc8SEJnpaHDhw4MBxiCMpY9clMDmfoCRnZhzXa8SBAwcOHD/PkT96QpBzt9+/fp04cODAgePvcLQt1mZamVwzaRpx4MCBA8dvcbSlcbbxcz2wm7WI+Ys5PCvFgQMHDhzfJwSKQMP/+nx7vgMHDhw4cATlZxYmmA0c82W021fFunDgwIEDx5ojaY3aodssWDC7ftu8Rc+AAwcOHDjWHNc0bZShBc2L66m7FHfHgQMHDhwLjtmmUY6YbwW1G1059OrXBw4cOHDgCDiSUrRp7fIIwiyyMGvzvjyPAwcOHDgOceTbS3mBbItly3fq+PA8OHDgwIHjNo58U6dt5+pHDMp/Qhn9Fw4cOHDgWHMM96baWEDQhs2iEu0gcpXvwIEDBw4cAcemvLUBhX2j2I4d6+/jwIEDB441RxtKm0UQ8qvNCnz+E6Fu/HDgwIEDx2g42JbD9hHbZuxUMK6+Jg4cOHDgWHNsCJLx4gZuFpLYl38cOHDgwHGKIym9+VJP7Yklz7P5zqqLxYEDBw4cQfXMl50XsxnrjGx2fRw4cODAcYqjDU/nbVges24LZ/4y6nA2Dhw4cOBYc7Rt2KxlyoNx+2Fi2yh+U5hx4MCBA0d5/VkhbAMEefmcbYbtCzkOHDhw4DjFMTvaUV0bkpiBzoaDswAHDhw4cOBoOdotn3xstynes3Kb/xUHDhw4cOw5ksXkw768HOYhg0d55K/tyX1x4MCBA8eaY1Y4k4atDTrkZf7UFYpAAw4cOHDgGHG05fOOZm9TthP6YjiIAwcOHDgWHG0p3ccaNsPEpAHLm7onT4sDBw4cOI5y5MUsWcC+6OZhiE1gAgcOHDhwnOVIltc2dbPWLtnuyiMObdABBw4cOHCc4mjL2KyVShaZY+XLqzeucODAgQPHgmM2RNsE2tpgRN5MtuX/yXkcOHDgwHGUox3S7QttPs4rfjXExDhw4MCB4z6OWfu0CRDMxoiz8V/eyOHAgQMHjj3HJr6QbwjNyupm62vFhwMHDhw4FhyP8shbqfZM3uCdijI8YcWBAwcOHGuOs2WvLd557CCPMmzuhQMHDhw4TnHMIgjJLdtmb7ahtS+00b4WDhw4cOAoOTZLbRd8d2Rh9iMABw4cOHD8FsdsmycJMeSf8wFiu7WGAwcOHDh+kqO9QbuZ1G5r5S8vHxTiwIEDB45THHlAoQ1AtPGIvHC2bWf0owEHDhw4cKw59nsxbcggX/bsFe7jEThw4MCBY8TxClLoNDaT+5S+AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/29/hello-world/" class="archive-article-date">
-  	<time datetime="2017-11-29T09:25:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-29</time>
-</a>
+<nav id="article-nav">
+  
+    <a href="/2017/11/30/多设备同步hexo博客/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          多设备同步hexo博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/11/29/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">hello hexo</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/29/hello-world/">hello hexo</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/11/29/Hello-Hexo/" class="archive-article-date">
-  	<time datetime="2017-11-29T03:16:01.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-29</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/11/29/Hello-Hexo/">小程序开发遇到的问题</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">wechat</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
+  
 
 
           </div>
@@ -351,8 +372,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
