@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0"
+  xmlns:atom="http://www.w3.org/2005/Atom"
+  xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>wubianluoye</title>
+    <link>https://github.com/wubianluoye/</link>
+    <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="%5Bobject%20Object%5D" rel="hub"/>
+    <description></description>
+    <pubDate>Thu, 30 Nov 2017 08:09:21 GMT</pubDate>
+    <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Hello Hexo</title>
+      <link>https://github.com/wubianluoye/2017/11/29/Hello-Hexo/</link>
+      <guid>https://github.com/wubianluoye/2017/11/29/Hello-Hexo/</guid>
+      <pubDate>Wed, 29 Nov 2017 03:16:01 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;1、图片问题&lt;/p&gt;
+&lt;p&gt;除tapbar外，背景图无法使用本地资源，替代方式是使用base64资源或者外网加载。每个image标签底部有一条透明间隔，非padding，非margin。在图片前面做遮罩层时可能会被坑。&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>1、图片问题</p><p>除tapbar外，背景图无法使用本地资源，替代方式是使用base64资源或者外网加载。每个image标签底部有一条透明间隔，非padding，非margin。在图片前面做遮罩层时可能会被坑。</p> <a id="more"></a><p>2、跳转</p><p>小程序页面跳转打开最多五层，超出五层不会跳转了，所以大家要注意，可以在跳转的时候关闭前一个页面。</p><p>3、wxml标签</p><p>wxml的标签跟html里面的一些标签是一样的，就说view标签就相当于div标签，text标签相当于span标签吧，然就是表单元素，这里就要注意了，在微信小程序中，表单元素都是原生组件，微信小程序中原生组件层级最高，所以在用input，canvas，map这些组件就要注意了。其中在样式上不支持overflow-x/overflow-y，只可使用overflow。</p><p>在input标签中会出现placeholder文字位置不固定，可使用使用placeholder-class属性修改placeholder样式。input标签无法设置 font-family; 。对input直接float：left也是不行的，要在input外面套view，然后对其进行浮动。</p><p>scroll-view组件注意事项：1、不要在scroll-view 中使用 textarea、map、canvas、video 组件2、scroll-into-view 的优先级高于 scroll-top。3、在滚动 scroll-view 时会阻止页面回弹，所以在 scroll-view 中滚动，是无法触发 onPullDownRefresh。</p><p>在map组件中只能使用cover-view标签，在cover-view标签下只能使用cover-view以及cover-image标签，这两种标签在样式上的问题非常多，不建议使用，问题1、当使用display:none;做隐藏的时候，其内容文字会出现在屏幕右上角，建议使用 wx:if=”false”或position:absolute;left:-1000rpx;这种方式做隐藏。2、border不支持单边。3、不支持padding的使用，在安卓端会出现padding消失的问题。</p><p>4、动画问题</p><p>在小程序中当有两个元素同时发生变化时，会出现冲突，导致其中一个变化，而另一个不做变化，所以要使用setTimeout方法避免元素同时出现变化。</p><p>5、js问题</p><p>js执行顺序，在开发者工具中执行先执行aap.js然后执行其他js文件，但在手机上app.js和其他js是同时执行的，就比如说你在app.js里面向本地存储一个变量，然后再去index.js里面取这个变量，在开发者工具中是可以取到的，但在手机上它会取不到的。</p>]]></content:encoded>
+      
+      <comments>https://github.com/wubianluoye/2017/11/29/Hello-Hexo/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Hello World</title>
+      <link>https://github.com/wubianluoye/2017/11/29/hello-world/</link>
+      <guid>https://github.com/wubianluoye/2017/11/29/hello-world/</guid>
+      <pubDate>Wed, 29 Nov 2017 03:09:22 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;documentation&lt;/a&gt; for more info. If you get any problems when using Hexo, you can find the answer in &lt;a href=&quot;https://hexo.io/docs/troubleshooting.html&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;troubleshooting&lt;/a&gt; or you can ask me on &lt;a href=&quot;https://github.com/hexojs/hexo/issues&quot;&gt;GitHub&lt;/a&gt;.&lt;br&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br><a id="more"></a></p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content:encoded>
+      
+      <comments>https://github.com/wubianluoye/2017/11/29/hello-world/#disqus_thread</comments>
+    </item>
+    
+  </channel>
+</rss>
