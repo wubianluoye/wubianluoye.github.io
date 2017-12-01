@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>换电脑怎么更新博客？ | wubianluoye</title>
+  <title>webpack3.0躺坑css处理与es6编译 | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。 但是考虑到如果每个GitHub Pages都需要额外的一个仓库存放这些文件，就显得特别冗余了。这个时候就可以用分支的思路！ 一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静">
-<meta name="keywords" content="hexo">
+  <meta name="description" content="Webpack3.0小案例躺坑css处理与ES6编译 css的编译与加载，基于style-loader、css-loader、postcss-loader、autoprefixer以及css预处理(以less为例)。ES6的编译与加载，babel-preset-env代替babel-preset-2015。">
+<meta name="keywords" content="webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="换电脑怎么更新博客？">
-<meta property="og:url" content="https://github.com/wubianluoye/2017/11/30/换电脑怎么更新博客？/index.html">
+<meta property="og:title" content="webpack3.0躺坑css处理与es6编译">
+<meta property="og:url" content="https://github.com/wubianluoye/2017/12/01/webpack3-0躺坑css处理与es6编译/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。 但是考虑到如果每个GitHub Pages都需要额外的一个仓库存放这些文件，就显得特别冗余了。这个时候就可以用分支的思路！ 一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静态网页。">
+<meta property="og:description" content="Webpack3.0小案例躺坑css处理与ES6编译 css的编译与加载，基于style-loader、css-loader、postcss-loader、autoprefixer以及css预处理(以less为例)。ES6的编译与加载，babel-preset-env代替babel-preset-2015。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-01T09:55:45.559Z">
+<meta property="og:updated_time" content="2017-12-01T10:01:01.669Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="换电脑怎么更新博客？">
-<meta name="twitter:description" content="其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。 但是考虑到如果每个GitHub Pages都需要额外的一个仓库存放这些文件，就显得特别冗余了。这个时候就可以用分支的思路！ 一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静态网页。">
+<meta name="twitter:title" content="webpack3.0躺坑css处理与es6编译">
+<meta name="twitter:description" content="Webpack3.0小案例躺坑css处理与ES6编译 css的编译与加载，基于style-loader、css-loader、postcss-loader、autoprefixer以及css预处理(以less为例)。ES6的编译与加载，babel-preset-env代替babel-preset-2015。">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -159,58 +159,96 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-换电脑怎么更新博客？" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-webpack3-0躺坑css处理与es6编译" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      换电脑怎么更新博客？
+      webpack3.0躺坑css处理与es6编译
     </h1>
   
 
         
-        <a href="/2017/11/30/换电脑怎么更新博客？/" class="archive-article-date">
-  	<time datetime="2017-11-30T10:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
+        <a href="/2017/12/01/webpack3-0躺坑css处理与es6编译/" class="archive-article-date">
+  	<time datetime="2017-12-01T07:30:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-01</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。</p>
-<p>但是考虑到如果每个GitHub Pages都需要额外的一个仓库存放这些文件，就显得特别冗余了。这个时候就可以用分支的思路！</p>
-<p>一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静态网页。<br><a id="more"></a><br>最近我也用GitHub Pages搭建了一个独立博客，想到了这个方法，使用之后真的特别简洁。为了更直观地说明，奉上使用这种方法不同时候的流程：</p>
-<p>一、关于搭建的流程</p>
-<ol>
-<li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="noopener">http://CrazyMilk.github.io；</a></li>
-<li>创建两个分支：master 与 hexo；<br>3.设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；<br>4.使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库；</li>
-<li>在本地<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
-<li>修改_config.yml中的deploy参数，分支应为master；</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
-<li>执行hexo g -d生成网站并部署到GitHub上。</li>
-</ol>
-<p>这样一来，在GitHub上的<a href="http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(" target="_blank" rel="noopener">http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(</a> •̀ ω •́ )y！</p>
-<p>二、关于日常的改动流程在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
-<ol>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li><ol>
-<li>然后才执行hexo g -d发布网站到master分支上。虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</li>
-</ol>
-</li>
-</ol>
-<p>三、本地资料丢失后的流程当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<ol>
-<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；</li>
-<li><ol>
-<li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
-</ol>
-</li>
-</ol>
-<p>以上就是我采用的方法，虽说文字有点多，但是我个人觉得真的挺高效和简洁的。</p>
-<p>更详细的可以参考我刚写的博文：<a href="https://link.zhihu.com/?target=http%3A//crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%25E6%2590%25AD%25E5%25BB%25BA%25E5%258D%259A%25E5%25AE%25A2/%23more" target="_blank" rel="noopener">GitHub Pages + Hexo搭建博客</a>。</p>
-<p>作者：CrazyMilk<br>链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762/answer/79109280</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
+        <p>Webpack3.0小案例躺坑css处理与ES6编译</p>
+<p>css的编译与加载，基于style-loader、css-loader、postcss-loader、autoprefixer以及css预处理(以less为例)。<br>ES6的编译与加载，babel-preset-env代替babel-preset-2015。<br><a id="more"></a><br>css与js静态资源分割及注意事项，基于插件 extract-text-webpack-plugin。<br>css资源文件的编译与加载</p>
+<p>css最基本的编译要依靠于style-loader、css-loader这两个加载器，所谓最基本，就是在不考虑使用css预处理器以及css后处理器的情况。预处理器包括less、scss、sass、stylus，后处理器如postcss的autoprefixer等。首先我们先弄明白各加载器的作用：</p>
+<p>style-loader，将所有处理好的css样式以行内元素style标签的格式动态注入到界面的head标签中去。<br>css-loader，用来处理css样式，例如把css中类似@import()或者url()这样的引用资源进行引入或者处理。<br>autoprefixer，postcss提供用来自动处理css在不同浏览器之间前缀等问题，从这里我们也可以看出，使用autoprefixer需要先引入postcss。<br>预处理-loader，所有预处理器都是以css为终点生成文件的一种专门的编程语言，为css增加了一些编程特性。<br>了解了这些加载器各自的职能，那我们现在先小试牛刀，用代码来体验一下。</p>
+<p>style-loader &amp;&amp; css-loader</p>
+<p>1、首先，我们在src项目文件夹下新建css文件夹，并新增一样式文件common.css，并写一些全局的css</p>
+<p>html,<br>body {<br>    margin: 0;<br>    padding: 0;<br>    width: 100%;<br>    height: 100%;<br>    background: linear-gradient(to bottom, #abcdef, #f3f5f7);<br>}<br>2、安装css-loader和style-loader，进入到命令行，执行</p>
+<p>cnpm i style-loader css-loader –save-dev<br>3、现在我们在入口文件app.js中去引入我们的common.css：</p>
+<p> //app.js<br> import ‘./css/common.css’;<br> …<br>4、webpack配置，打开webpack.config.js,新增module配置项：</p>
+<p>let path = require(‘path’);<br>…<br>module.exports = {<br>    entry: path.resolve(<strong>dirname, ‘./src/main.js’),//入口文件地址<br>    output: {<br>        path: path.resolve(</strong>dirname, ‘./dist’),<br>        filename: ‘js/[name]-[chunkhash].js’<br>    },<br>    module: {<br>        rules: [ {<br>            test: /.css$/,//匹配所有css文件<br>            use: [<br>                { loader: “style-loader” },<br>                { loader: “css-loader” }<br>             ]//指定加载器<br>            exclude: /node_modules///排除对node_module文件夹下面的所有资源的匹配<br>        }]<br>    },<br>    …<br>}<br>需要注意，在指定加载器的时候，要注意各加载器的顺序，webpack中loader的解析是从右往左的顺序进行的，以当前为例，css文件首先是要通过css-loader进行处理，在将处理好的css交由style-loader，因此在指定加载器的时候，首先应该是style-loader,其次是css-loader。</p>
+<p>现在，我们再次执行webpack编译命令，在浏览器中打开生成的index.html，发现页面背景已经如我们设置改变了,并且html文档中css也已经以style模式注入到head中了。</p>
+<p>style-loader与css-loader加载<br>style-loader与css-loader加载<br>autoprefixer</p>
+<p>上文我们已经说过，autoprefixer是css后处理器postcss提供的一个对css3中个别属性在不同浏览器下需要添加浏览器前缀的样式处理工具，因此在使用autoprefixer之前，我们需要安装postcss-loader来加载它。</p>
+<p> cnpm i postcss-loader autoprefixer –save-dev<br>1、现在，我们打开webpack.config.js配置文件，在module下配置autoprefixer</p>
+<p>…<br>module: {<br>        rules: [{<br>            test: /.css$/,<br>            use: [<br>                { loader: “style-loader” },<br>                { loader: “css-loader” },<br>                { loader: “postcss-loader” }//指定postcss加载器<br>            ],<br>            exclude: /node_modules/<br>        }]<br>    }<br>    …<br>在配置postcss-loader之后，我们需要注意，由于css-loader处理文件导入的方式，因此加载器postcss-loader不能与CSS模块一起使用。 为了使它们正常工作，可以添加css-loader的importLoaders选项。。<br>…<br>module: {<br>        rules: [{<br>            test: /.css$/,<br>            use: [<br>                { loader: “style-loader” },<br>                { loader: “css-loader”,options: { importLoaders: 1 } },//importLoaders解决由于css-loader处理文件导入的方式导致postcss-loader不能正常使用的问题<br>                { loader: “postcss-loader” }//指定postcss加载器<br>            ],<br>            exclude: /node_modules/<br>        }]<br>    }<br>    …<br>2、接下来，我们要给postcss-loader指定加载autoprefixer的操作，在根目录新建postcss.config.js</p>
+<p>//postcss.config.js<br>module.exports = {<br>    plugins: [<br>        require(“autoprefixer”)()<br>    ]<br>}<br>在postcss.config.js配置文件中，我们给引入了autoprefixer,这样一来，在postcss-loader加载的时候，就会自动去读取该配置文件里面的配置项，加载autoprefixer了。</p>
+<p>3、所有配置项已经完成，现在我们在原有的common.css文件中去添加样式，用来测试autoprefixer</p>
+<p>html,<br>body {<br>    margin: 0;<br>    padding: 0;<br>    width: 100%;<br>    height: 100%;<br>    background: linear-gradient(to bottom, #abcdef, #f3f5f7);<br>}</p>
+<p>.flexbox {<br>    display: flex;<br>    background: linear-gradient(to bottom, #abcdef, #096)<br>}<br>添加完成后，运行webpack命令进行编译，并在浏览器中打开index.html，打开控制台查看head标签下生成的style标签，已经可以看到autoprefixer已经自动为我们添加了浏览器前缀</p>
+<p>autoprefixer<br>autoprefixer<br>autoprefixer 为我们提供了可以根据需求配置的参数，例如我么可以让它最终生成的css兼容最近的N个版本就好，但这不是我们本次讨论的重点，有兴趣的同学可以自己去官网查看。</p>
+<p>//postcss.config.js  设置给最近5个版本的浏览器加前缀<br>module.exports = {<br>    plugins: [<br>        require(“autoprefixer”)({browsers:’last 5 version’})<br>    ]<br>}<br>autoprefixer-set-version<br>autoprefixer-set-version<br>css预处理（less-loader）</p>
+<p>1、在src/css文件夹下新建style.less文件，并添加样式作为测试，并在入口文件app.js中引用该less文件</p>
+<p>@base: #f938ab;</p>
+<p>.box-shadow(@style, @c) when (iscolor(@c)) {<br>  -webkit-box-shadow: @style @c;<br>  box-shadow:         @style @c;<br>}<br>.box-shadow(@style, @alpha: 50%) when (isnumber(@alpha)) {<br>  .box-shadow(@style, rgba(0, 0, 0, @alpha));<br>}<br>.box {<br>  color: saturate(@base, 5%);<br>  border-color: lighten(@base, 30%);<br>  div { .box-shadow(0 0 5px, 30%) }<br>}<br> //app.js<br>import ‘./css/common.css’;//引入css<br>import ‘./css/style.less’;//引入less<br>2、安装less以及less-loader，并在webpack配置项中进行配置。</p>
+<p>cnpm i less less-loader –save-dev<br>在module配置项中新增一条对less文件处理的规则：</p>
+<p> …<br> module: {<br>        rules: [{<br>            test: /.css$/,<br>            use: [<br>                { loader: “style-loader” },<br>                { loader: “css-loader”, options: { importLoaders: 1 } },<br>                { loader: “postcss-loader” },<br>            ],<br>            exclude: /node_modules/<br>        }, {<br>            test: /.less$/,<br>            use: [<br>                { loader: “style-loader” },<br>                { loader: “css-loader”, options: { importLoaders: 1 } },<br>                { loader: “postcss-loader” },<br>                { loader: “less-loader” }//less放在最后，因为要最先加载（loader从右往左加载的规则）<br>            ]<br>        }]<br>    },<br>…<br>配置完成后，再次运行webpack命令，并在浏览器中查看效果，可以看到在head标签内又新增了一个style标签，并且已经将less编译成css了</p>
+<p>less-loader<br>less-loader<br>Babel编译ES6</p>
+<p>babel是一个js的转码器，将ES6或者ES7转换成ES5或者ES3；babel编译主要依靠于核心库babel-core，也就是说，用ES6进行编程而不需要担心浏览器环境是否支持。</p>
+<p>babel-preset-env代替babel-preset-ES2015</p>
+<p>在此之前，我猜测有很多的同学使用Babel的时候，preset必然会选择ES2015，但是最近babel官方推出了babel-preset-env，并建议在使用的时候选择env代替之前的ES20**。env为我们提供了更智能的编译选择，在此我们就不展开，有兴趣的同学可以去官网深入了解。</p>
+<p>babel-preset-env编译ES6</p>
+<p>1、首先，我们安装babel-loader、babel-core以及babel-preset-env，并在入口文件app.js中新增一段带ES6语法的js。</p>
+<p>cnpm install –save-dev babel-loader babel-core babel-preset-env<br>import ‘./css/common.css’;<br>import ‘./css/style.less’;<br>//生成一个整数随机值，数值大于4则返回成功的Promise对象，否则返回错误的promise对象<br>function getData() {<br>    let promise = new Promise((resolve, reject) =&gt; {<br>        let key = ~~(Math.random() * 10);<br>        let temp = [‘es6’,’babel’]<br>        if (key &gt;= 5) {<br>            let obj = {<br>                msg: “ok”,<br>                data: [key,…temp]<br>            };<br>            resolve.call(this, obj);<br>        } else {<br>            let obj = {<br>                msg: “error”,<br>                data: [key,…temp]<br>            };<br>            reject.call(this, obj);<br>        }<br>    })<br>    return promise<br>}<br>//找到页面中的Dom<br>let container = document.querySelector(‘#app’);<br>//获取返回的结果并打印到界面<br>getData().then((data) =&gt; {<br>    container.innerHTML = JSON.stringify(data)<br>}, (err) =&gt; {<br>    container.innerHTML = JSON.stringify(err)<br>})<br>在这段代码中，我么使用了Promise来返回最后生成的结果，并将结果打印到界面中，其中运用了Promise、箭头函数、解构赋值等ES6的语法</p>
+<p>2、现在，我们去webpack配置文件中新增一条规则：</p>
+<p>…<br>  module: {<br>        rules: [{<br>            test: /.css$/,<br>            use: [<br>                { loader: “style-loader” },<br>                { loader: “css-loader”, options: { importLoaders: 1 } },<br>                { loader: “postcss-loader” }<br>            ],<br>            exclude: /node_modules/<br>        }, {<br>            test: /.less$/,<br>            use: [<br>                { loader: “style-loader” },<br>                { loader: “css-loader”, options: { importLoaders: 1 } },<br>                { loader: “postcss-loader” },<br>                { loader: “less-loader” }<br>            ]<br>        },<br>        //新增规则，编译js<br>        {<br>            test: /.js$/,<br>            loader: ‘babel-loader’,<br>            exclude: /node_modules/<br>        }]<br>    },<br>并且在根目录下新增.babelrc文件，用来存放babel相关的配置：</p>
+<p>//.babelrc<br>{<br>    “presets”: [<br>        [“env”,{<br>            “targets”: {<br>                “chrome”: 52,<br>                “browsers”: [“last 2 versions”, “safari 7”]<br>            }<br>        }]<br>    ]//设置编译场景，并配置目标结果兼容到chrome52版本以上等等。<br>}<br>3、然后我们去根目录下的index.html里面，新增一个div，并且给这个div的id取名app。</p>
+<p>…</p>
+<p><body><br>    <div id="app"></div><br></body><br>…<br>现在我们在命令行运行webpack命令，并在浏览器中刷新界面，可以看到页面输出了我们结果。</p>
+<p>babel编译es6<br>babel编译es6</p>
+<p>并且，在生成的js中发现，通过编译后的js已经不再是es6的写法了,变异后的核心代码如下：<br>…<br>//编译后的js<br>function getData() {<br>    var _this = this;</p>
+<pre><code>var promise = new Promise(function (resolve, reject) {
+    var key = ~~(Math.random() * 10);
+    var temp = [&apos;es6&apos;, &apos;babel&apos;];
+    if (key &gt;= 5) {
+        var obj = {
+            msg: &quot;ok&quot;,
+            data: [key].concat(temp)
+        };
+        resolve.call(_this, obj);
+    } else {
+        var _obj = {
+            msg: &quot;error&quot;,
+            data: [key].concat(temp)
+        };
+        reject.call(_this, _obj);
+    }
+});
+return promise;
+</code></pre><p>}<br>var container = document.querySelector(‘#app’);</p>
+<p>getData().then(function (data) {<br>    container.innerHTML = JSON.stringify(data);<br>}, function (err) {<br>    container.innerHTML = JSON.stringify(err);<br>});<br>…<br>到此，通过babel编译js就基本完成，当然，babel提供了很多的插件和配置项，有兴趣的同学可以深入了解，本文暂不做深层次探讨。</p>
+<p>CSS与JS文件分离</p>
+<p>通过上面的操作，我们已经可以成功的将css和js进行编译打包，但是当我们再次去查看打包后的js文件时，发现js体积很大（目前js大小22kb），我们只是写了几行js而已啊，那么这又是怎么回事？</p>
+<p>实际上，webpack在打包的时候，会把所有的模块，最终打包在一个文件里面，这也是为什么我们的js文件会如此之大，但却没看到有相应的css文件的原因。</p>
+<p>静态资源处理器extract-text-webpack-plugin</p>
+<p>extract-text-webpack-plugin用来实现不同文件的分离，其用法也和之前插件的用法一样。<br>1、安装插件</p>
+<p>cnpm i extract-text-webpack-plugin –save-dev<br>2、在webpack配置项中对之前我们的css编译规则进行更改：</p>
+<p>…<br>//引入插件<br>let extractTextPlugin = require(‘extract-text-webpack-plugin’);<br>//初始化两个实例用于两处规则分别加载<br>let extractCSS = new extractTextPlugin(‘css/[name]-one.css’);<br>let extractLESS = new extractTextPlugin(‘css/[name]-two.css’);</p>
+<p> …<br>  module: {<br>        rules: [{<br>            test: /.css$/,<br>            exclude: /node_modules/,<br>            //extractCSS实例对css进行操作<br>            use: extractCSS.extract([<br>                // { loader: “style-loader” },//style-loader不能和插件一起使用<br>                { loader: “css-loader”, options: { importLoaders: 1 } },<br>                { loader: “postcss-loader” }<br>            ])<br>        }, {<br>            test: /.less$/,<br>            exclude: /node_modules/,<br>            //extractLESS实例对less进行操作<br>            use: extractLESS.extract([<br>                // { loader: “style-loader” },<br>                { loader: “css-loader”, options: { importLoaders: 1 } },<br>                { loader: “postcss-loader” },<br>                { loader: “less-loader” }<br>            ])<br>        }, {<br>            test: /.js$/,<br>            use: [{ loader: “babel-loader” }],<br>            exclude: /node_modules/<br>        }]<br>    },<br>    …<br>     plugins: [<br>        //注册插件<br>        extractCSS,<br>        extractLESS<br>    ]<br>在配置中需要注意一下几点：</p>
+<p>插件不能喝style-loader同时使用，原因是style-loader的作用是获取到js内部的样式并一行内形式插入到head标签中，但是extractTextPlugin插件是将js内部的代码提取成css文件并添加外部引用的方式进行加载。<br>在多处用到extractTextPlugin插件的时候，我们需要对插件进行功能性的拆分，就比如我们的项目中有两处规则用到它，因此我们首先对插件进行两次实例化得到两个实例，并分别用到两个处理规则中。<br>别忘了在plugins下进行注册。<br>最后，我们再看我们生成的js文件，已经只有4kb大小，减少了接近5倍的体积，可想而知，分离出css是很有必要的。</p>
+<p>静态资源分离<br>静态资源分离</p>
 
       
 
@@ -224,7 +262,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
         		</li>
       		
 		</ul>
@@ -280,7 +318,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3aS24CMRAFQO5/abKNhDCvP46IVKwQITOuieR2XvfjEb+ev16T33p9/3rNd59U7/7Aw8PDu8Z7Hl/Jd863z5eb3DFfMx4eHt5t3nlZ+aZ8Xkq+b5/XkD9KPDw8vO/hJeDzd/LHd2bj4eHh/RdeEi7kB+L8anh4eHjfw+sdbXs/TY7d1Qe3kLXg4eHh1bLWKGL4nvdX+nt4eHh44656UiQmQW21eVZeLR4eHt4FXjWQ3ToKn6+ZNMYKw2F4eHh4F3jVVlMvjJiUnLz8fPiD4eHh4V3gJYzeBt2LWXPSKF/Bw8PDW+UlEUMO2yo8+dXw8PDwdnnVpff6TZODb3KdQmXDw8PDW+JVo4RqGeg91jy8iPp7eHh4eBd41WIwaYZVxwiaLTo8PDy8C7xq6NArEpPDd+++zUwFDw8Pb8zbalbNC0A+8vU2zMXDw8Nb5SWtpt4wQd7cqo5bVdeJh4eHt8U7b/3zQ3a19TWJMwoAPDw8vAFvctFqeyzB947aH76Jh4eHt8qrXrRXSHrfz9dWGB3Aw8PDu8DLR52qN0vKSa8x9jbUwMPDw7vAy8OCfNNP8Hk8sVVI8PDw8LZ4k1Z93hjrjSZMBgvw8PDw7vGSNnz1lQ9F9Uapmg0wPDw8vFXeuQ3WKwPVZfVKVF6E8PDw8HZ55wUln1c3/fzQnK8kCnDx8PDwVnnVxlXeY5oPXfViXzw8PLzbvBwwv31hW5+vHw8PD2+V1xu6ykcEqqWiGjpEowN4eHh4q7zq5lvOhotFZWtgCw8PD+82r9qgSgpAfuzOg4+8UOHh4eH9Da8XLvSWlR+vq2EEHh4e3jfzevjJ53mBeSTPCQ8PD+8PedXG1VYuUg2a8fDw8G7zetFANertPYJqkwwPDw/vNm/hH/7ipt+LJEbDAXh4eHg7vB/Og32CqvZ/YQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsElEQVR42u3aMXLDMAwEQP3/007rGcfyASA5KpaVx1EkrgqCPuK64vF6G+/fVP8ruefnyJ/YHHh4eHiDqd/f+vMBk2/up3t/n2TOeHh4eLt59w9Ipnj/OX9K9Vk/LHh4eHiP5CULffIK5ht6PDw8vCfzkm1uFZaHEXh4eHhP4FUj1PutcC/UyDflW7IWPDw8vJiXnyI95/OW8z08PDy88al6srhPmgmqW+fybPHw8PA28ObTSkKNXnjRKwx4eHh4Z3gLGpuCyGBSVKp3wMPDw9vNmzdU9aZYDUGqf8XDw8M7ycsbC+aNWZMiEW3N8fDw8JbyJo0C+YMnpaLawnUlbjw8PLwBL7m0t/2txhbVI65CXIKHh4e3lDc5wr+KY9KIkLSifv2tgIeHh7eUl7cI5IdbyW62+lp7ZQYPDw9vNy9vfqoe589jjknsi4eHh7eWlyy1q/q55tvl8g8APDw8vM285IA/mVyvITVZ9KulCw8PD28fLy8Pva1znoX0royarvDw8PCW8vLooVdI8gIz75X6p3UADw8PbzMvj2vz11HddicvLronHh4e3gZeL4SdNEv1CkMzjMDDw8M7yKu2Os1bpq5g5E1XPwoDHh4e3oA3eXCVMekL6wUfeHh4eDt4CXUetvbq1bIwAg8PD28Db9XP/slx2qSZ4Mc1eHh4eMd5yfa3uohXo41R5IGHh4d3hJcfklWjgfyVVUPer9fj4eHhLeW9iqO6iOcvpRpPRLEIHh4e3gZedcGtthHM79Br2CoPPDw8vCIvLwb5K+i1XiXLfbkw4OHh4W3jVQOIeegwCTWSGBoPDw/vObxeo0AvdKjeMwuu8fDw8E7zJsHEvADcb/3x8PDwTvLyQ69kue8t670DsKjpCg8PD28pr/qDPykS1QbWScCxYODh4eGlvD+90vfdCn15AAAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -294,18 +332,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/01/webpack3-0躺坑css处理与es6编译/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          webpack3.0躺坑css处理与es6编译
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/11/30/多设备同步hexo博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">多设备同步hexo博客</div>
+    <a href="/2017/11/30/换电脑怎么更新博客？/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">换电脑怎么更新博客？</div>
       <i class="icon-circle-right"></i>
     </a>
   
