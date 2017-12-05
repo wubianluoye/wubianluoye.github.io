@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>换电脑怎么更新博客？ | wubianluoye</title>
+  <title>Tag: Iscroll | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。 但是考虑到如果每个GitHub Pages都需要额外的一个仓库存放这些文件，就显得特别冗余了。这个时候就可以用分支的思路！ 一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静">
-<meta name="keywords" content="hexo">
-<meta property="og:type" content="article">
-<meta property="og:title" content="换电脑怎么更新博客？">
-<meta property="og:url" content="https://github.com/wubianluoye/2017/11/30/换电脑怎么更新博客？/index.html">
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,编程,代码,开源,IT网站,Developer,Coder,html,css,css3,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="wubianluoye">
+<meta property="og:url" content="https://github.com/wubianluoye/tags/Iscroll/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。 但是考虑到如果每个GitHub Pages都需要额外的一个仓库存放这些文件，就显得特别冗余了。这个时候就可以用分支的思路！ 一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静态网页。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-01T09:55:45.559Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="换电脑怎么更新博客？">
-<meta name="twitter:description" content="其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。 但是考虑到如果每个GitHub Pages都需要额外的一个仓库存放这些文件，就显得特别冗余了。这个时候就可以用分支的思路！ 一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静态网页。">
+<meta name="twitter:title" content="wubianluoye">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -159,186 +155,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-换电脑怎么更新博客？" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      换电脑怎么更新博客？
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/12/05/IScroll5-使用指南/" class="archive-article-date">
+  	<time datetime="2017-12-05T02:34:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/12/05/IScroll5-使用指南/">IScroll5 使用指南</a>
     </h1>
   
 
-        
-        <a href="/2017/11/30/换电脑怎么更新博客？/" class="archive-article-date">
-  	<time datetime="2017-11-30T10:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。</p>
-<p>但是考虑到如果每个GitHub Pages都需要额外的一个仓库存放这些文件，就显得特别冗余了。这个时候就可以用分支的思路！</p>
-<p>一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静态网页。<br><a id="more"></a><br>最近我也用GitHub Pages搭建了一个独立博客，想到了这个方法，使用之后真的特别简洁。为了更直观地说明，奉上使用这种方法不同时候的流程：</p>
-<p>一、关于搭建的流程</p>
-<ol>
-<li>创建仓库，<a href="http://CrazyMilk.github.io；" target="_blank" rel="noopener">http://CrazyMilk.github.io；</a></li>
-<li>创建两个分支：master 与 hexo；<br>3.设置hexo为默认分支（因为我们只需要手动管理这个分支上的Hexo网站文件）；<br>4.使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库；</li>
-<li>在本地<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行npm install hexo、hexo init、npm install 和 npm install hexo-deployer-git（此时当前分支应显示为hexo）;</li>
-<li>修改_config.yml中的deploy参数，分支应为master；</li>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo提交网站相关的文件；</li>
-<li>执行hexo g -d生成网站并部署到GitHub上。</li>
-</ol>
-<p>这样一来，在GitHub上的<a href="http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(" target="_blank" rel="noopener">http://CrazyMilk.github.io仓库就有两个分支，一个hexo分支用来存放网站的原始文件，一个master分支用来存放生成的静态网页。完美(</a> •̀ ω •́ )y！</p>
-<p>二、关于日常的改动流程在本地对博客进行修改（添加新博文、修改样式等等）后，通过下面的流程进行管理。</p>
-<ol>
-<li>依次执行git add .、git commit -m “…”、git push origin hexo指令将改动推送到GitHub（此时当前分支应为hexo）；</li>
-<li><ol>
-<li>然后才执行hexo g -d发布网站到master分支上。虽然两个过程顺序调转一般不会有问题，不过逻辑上这样的顺序是绝对没问题的（例如突然死机要重装了，悲催….的情况，调转顺序就有问题了）。</li>
-</ol>
-</li>
-</ol>
-<p>三、本地资料丢失后的流程当重装电脑之后，或者想在其他电脑上修改博客，可以使用下列步骤：</p>
-<ol>
-<li>使用git clone git@github.com:CrazyMilk/CrazyMilk.github.io.git拷贝仓库（默认分支为hexo）；</li>
-<li><ol>
-<li>在本地新拷贝的<a href="http://CrazyMilk.github.io文件夹下通过Git" target="_blank" rel="noopener">http://CrazyMilk.github.io文件夹下通过Git</a> bash依次执行下列指令：npm install hexo、npm install、npm install hexo-deployer-git（记得，不需要hexo init这条指令）。</li>
-</ol>
-</li>
-</ol>
-<p>以上就是我采用的方法，虽说文字有点多，但是我个人觉得真的挺高效和简洁的。</p>
-<p>更详细的可以参考我刚写的博文：<a href="https://link.zhihu.com/?target=http%3A//crazymilk.github.io/2015/12/28/GitHub-Pages-Hexo%25E6%2590%25AD%25E5%25BB%25BA%25E5%258D%259A%25E5%25AE%25A2/%23more" target="_blank" rel="noopener">GitHub Pages + Hexo搭建博客</a>。</p>
-<p>作者：CrazyMilk<br>链接：<a href="https://www.zhihu.com/question/21193762/answer/79109280" target="_blank" rel="noopener">https://www.zhihu.com/question/21193762/answer/79109280</a><br>来源：知乎<br>著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Iscroll</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3aS24CMRAFQO5/abKNhDCvP46IVKwQITOuieR2XvfjEb+ev16T33p9/3rNd59U7/7Aw8PDu8Z7Hl/Jd863z5eb3DFfMx4eHt5t3nlZ+aZ8Xkq+b5/XkD9KPDw8vO/hJeDzd/LHd2bj4eHh/RdeEi7kB+L8anh4eHjfw+sdbXs/TY7d1Qe3kLXg4eHh1bLWKGL4nvdX+nt4eHh44656UiQmQW21eVZeLR4eHt4FXjWQ3ToKn6+ZNMYKw2F4eHh4F3jVVlMvjJiUnLz8fPiD4eHh4V3gJYzeBt2LWXPSKF/Bw8PDW+UlEUMO2yo8+dXw8PDwdnnVpff6TZODb3KdQmXDw8PDW+JVo4RqGeg91jy8iPp7eHh4eBd41WIwaYZVxwiaLTo8PDy8C7xq6NArEpPDd+++zUwFDw8Pb8zbalbNC0A+8vU2zMXDw8Nb5SWtpt4wQd7cqo5bVdeJh4eHt8U7b/3zQ3a19TWJMwoAPDw8vAFvctFqeyzB947aH76Jh4eHt8qrXrRXSHrfz9dWGB3Aw8PDu8DLR52qN0vKSa8x9jbUwMPDw7vAy8OCfNNP8Hk8sVVI8PDw8LZ4k1Z93hjrjSZMBgvw8PDw7vGSNnz1lQ9F9Uapmg0wPDw8vFXeuQ3WKwPVZfVKVF6E8PDw8HZ55wUln1c3/fzQnK8kCnDx8PDwVnnVxlXeY5oPXfViXzw8PLzbvBwwv31hW5+vHw8PD2+V1xu6ykcEqqWiGjpEowN4eHh4q7zq5lvOhotFZWtgCw8PD+82r9qgSgpAfuzOg4+8UOHh4eH9Da8XLvSWlR+vq2EEHh4e3jfzevjJ53mBeSTPCQ8PD+8PedXG1VYuUg2a8fDw8G7zetFANertPYJqkwwPDw/vNm/hH/7ipt+LJEbDAXh4eHg7vB/Og32CqvZ/YQAAAABJRU5ErkJggg==" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/12/01/webpack3-0躺坑css处理与es6编译/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          webpack3.0躺坑css处理与es6编译
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/11/30/多设备同步hexo博客/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">多设备同步hexo博客</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -361,9 +231,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
