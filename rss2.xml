@@ -8,8 +8,26 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="%5Bobject%20Object%5D" rel="hub"/>
     <description></description>
-    <pubDate>Tue, 05 Dec 2017 03:14:10 GMT</pubDate>
+    <pubDate>Tue, 05 Dec 2017 05:54:03 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>react组件间通信</title>
+      <link>https://github.com/wubianluoye/2017/12/05/react%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/</link>
+      <guid>https://github.com/wubianluoye/2017/12/05/react%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/</guid>
+      <pubDate>Tue, 05 Dec 2017 03:39:20 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;父组件可以给子组件传递属性，&lt;/p&gt;
+&lt;p&gt;父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状&lt;/p&gt;
+&lt;p&gt;态，不要这么做，会降低组件的内聚度，提高组件间的耦合度&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>父组件可以给子组件传递属性，</p><p>父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状</p><p>态，不要这么做，会降低组件的内聚度，提高组件间的耦合度</p><a id="more"></a><p>子组件可以调用父组件的方法，前提是父组件已经把方法传递给子组件了</p><p>这样的话，只要外层有至少一个共同的父组件，这两个组件就都可以通过共同的父组件进行通信</p><pre><code>React.addons.LinkedStateMixin         为 react提供的 双向绑定的react-with-addons.min.jsmixins:[React.addons.LinkedStateMixin]&lt;input type=&quot;text&quot; onClick={this.linkState(&apos;name&apos;)} style={{margin:"5px 0"}}/&gt;</code></pre><p>双向绑定。。<br>为单个数据挂载。。</p><pre><code>sexc:function(e){    this.setState({        sex:e.target.value    })}</code></pre><p>一个函数处理多个事件</p><pre><code>aal:function(type){    var that=this;    return function(e){        var obj={};        obj[type]=e.target.value;        that.setState(obj);    }}&lt;div&gt;&lt;input type=&quot;text&quot; onChange={this.aal(&apos;age&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}&lt;input type=&quot;text&quot; onChange={this.aal(&apos;name&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}&lt;input type=&quot;text&quot; onChange={this.aal(&apos;sex&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}&lt;/div&gt;</code></pre>]]></content:encoded>
+      
+      <comments>https://github.com/wubianluoye/2017/12/05/react%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>keep-alive使复用子组件不刷新</title>
@@ -86,29 +104,6 @@
       <content:encoded><![CDATA[<p>今天想把最近的一些小代码push到github上</p><p>我先是将该目录git init进行初始化，然后</p><pre><code>#git add -A </code></pre><a id="more"></a><p>接着</p><pre><code>#git commit -m “description...”</code></pre><p>然后在github上新建一个远程库，想要将其与我本地的库相关联，使用：</p><pre><code>#git remote add origin git@github.com:YOURGITHUBNAME/REPOSITORY.git</code></pre><p>并push到远程端</p><p>至此，一切顺利</p><p>于是，我使用了命令：</p><pre><code>#git push -u origin master</code></pre><p>结果报错如下：</p><pre><code>error: failed to push some refs to &apos;git@github.com:你的远程库名.git&apos;hint: Updates were rejected because the tip of your current branch is behindhint: its remote counterpart. Integrate the remote changes (e.g.hint: &apos;git pull ...&apos;) before pushing again.hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</code></pre><p>从提示可以看出，是由于两者不同步，因此需要先pull，进行合并然后在进行push，<br>因此先使用</p><pre><code>git pull --rebase origin master</code></pre><p>将远程文件同步下来。</p><p>然后再执行推送</p><pre><code>git push -u origin master</code></pre><p>终于，成功！</p>]]></content:encoded>
       
       <comments>https://github.com/wubianluoye/2017/12/05/git%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>git 删除远程端文件或文件夹</title>
-      <link>https://github.com/wubianluoye/2017/12/05/git-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E7%AB%AF%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
-      <guid>https://github.com/wubianluoye/2017/12/05/git-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E7%AB%AF%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
-      <pubDate>Tue, 05 Dec 2017 02:52:09 GMT</pubDate>
-      <description>
-      
-        
-        
-          &lt;p&gt;首先，先删除本地的需要删除的文件或者文件夹，然后&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#git add .
-#git commit -m &amp;apos;del some document&amp;apos;
-#git push origin master
-&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;3
-        
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>首先，先删除本地的需要删除的文件或者文件夹，然后</p><pre><code>#git add .#git commit -m &apos;del some document&apos;#git push origin master</code></pre><p>3步解决！</p>]]></content:encoded>
-      
-      <comments>https://github.com/wubianluoye/2017/12/05/git-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E7%AB%AF%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9/#disqus_thread</comments>
     </item>
     
   </channel>

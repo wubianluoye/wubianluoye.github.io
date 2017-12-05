@@ -6,20 +6,16 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>关于splice和slice | wubianluoye</title>
+  <title>Tag: React | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="splice() splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。 splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。 如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。">
-<meta name="keywords" content="JavaScript">
-<meta property="og:type" content="article">
-<meta property="og:title" content="关于splice和slice">
-<meta property="og:url" content="https://github.com/wubianluoye/2017/12/05/关于splice和slice/index.html">
+  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,编程,代码,开源,IT网站,Developer,Coder,html,css,css3,">
+<meta property="og:type" content="website">
+<meta property="og:title" content="wubianluoye">
+<meta property="og:url" content="https://github.com/wubianluoye/tags/React/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="splice() splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。 splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。 如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-05T03:27:14.927Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于splice和slice">
-<meta name="twitter:description" content="splice() splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。 splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。 如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。">
+<meta name="twitter:title" content="wubianluoye">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -159,167 +155,60 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-关于splice和slice" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      关于splice和slice
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/2017/12/05/react组件间通信/" class="archive-article-date">
+  	<time datetime="2017-12-05T03:39:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/12/05/react组件间通信/">react组件间通信</a>
     </h1>
   
 
-        
-        <a href="/2017/12/05/关于splice和slice/" class="archive-article-date">
-  	<time datetime="2017-12-05T01:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>splice()</strong></p>
-<p>splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</p>
-<p>splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。</p>
-<p>如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。</p>
-<a id="more"></a>
-<table><br>  <tr><br>    <th width="40%," bgcolor="skyblue">参数</th><br>    <th width="50%" ,="" bgcolor="skyblue">描述</th><br>  </tr><br>  <tr><br>    <td> index 必需。 </td><br>    <td> 整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。</td><br>  </tr><br>  <tr><br>    <td>howmany 必需。</td><br>    <td>要删除的项目数量。如果设置为 0，则不会删除项目。</td><br>  </tr><tr><br>    <td>item1, …, itemX 可选。</td><br>    <td> itemX 可选。向数组添加的新项目。</td><br>  </tr><br></table>
-
-<p><strong>slice()</strong></p>
-<p>slice() 方法可从已有的数组中返回选定的元素。</p>
-<p><strong>语法</strong></p>
-<p><strong>arrayObject.slice(start,end)</strong></p>
-<p><strong>返回值</strong></p>
-<p>返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。<br>请注意，该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。</p>
-<table><br>  <tr><br>    <th width="40%," bgcolor="skyblue">参数</th><br>    <th width="50%" ,="" bgcolor="skyblue">描述</th><br>  </tr><br>  <tr><br>    <td>start 必需。</td><br>    <td>规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</td><br>  </tr><br>  <tr><br>    <td>end 可选。</td><br>    <td>规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</td><br></tr></table>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3a22ojMRAEUP//TyewT4Fgp6pbM/bCmScTX6QzAamn1I9HfH39u36/zv/y+92f1/6TqwsPDw9vNPVn12tA+91nU2y/m4yLh4eHdzVvthnk380/n8yh+B08PDy8t/LyYnqGf3378PDw8P5HXgLIB04KYjw8PLxP5iWBwuwz7XL/tqwFDw8PL+ZtDsDe9fqm8z08PDy88lQ9X3Znm0QSB29mi4eHh3cFrx0gD2FnDVh5kV1sGHh4eHhHeUk42x59zcKC/N1iJnh4eHg38totpI19NzerCCzw8PDwLua1VeimbSu5HbNQ47HZu/Dw8PC6TKAucGfhwp66iUXw8PDw9rz9w39e7Obvtrfj6S/j4eHhXcCbnRPtMXmckd/0aHvAw8PDu4A3O9rfh8Kz2r94PsDDw8M7xMsPtNpFfDbWrPXqj2IaDw8P7yivLYuTwU5tHnXokD8x4OHh4S14+RTPtl7lgUXeplD3lOHh4eEteHko0DZpJdfsqKw4+sLDw8M7ymvj2nyJn92OujssnhseHh7eKd6G1C7x+6i3bvPCw8PDu5G3WfrzCDhf+tti+o+NAQ8PD2/Bm02iPejaBArR08DrUfDw8PAu423ihjZybUvw/GgNDw8P7x5eskyfOhhrM+b28CxC4uHh4V3Ai0rVRXm9CW1nJTseHh7eWV5e4O5D202hnG8GT2NcPDw8vKO8tow+u2Hs97Gn/wY8PDy8o7yv8so3gzyWbccqohA8PDy8C3ibMKKF5fFEUihv2gvw8PDw9rxTD//5ndscqtXfxcPDw7uMNwsU8hL5VKtB3ciFh4eH9wG8tqjdtHDlbQd4eHh4n8nbRBJJzDGDHesXw8PDwyt5bYPUrKVgM26Cx8PDw7uH124e7ZLdHlzlLQUHTvbw8PDwOt432o9K3yjSmtEAAAAASUVORK5CYII=" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/12/05/微信二次开发-从环境配置到开发/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          微信二次开发-从环境配置到开发
-        
-      </div>
-    </a>
   
   
-    <a href="/2017/12/05/chrome插件开发api文档/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">chrome插件开发api文档</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
+    
 
 
           </div>
@@ -342,9 +231,9 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

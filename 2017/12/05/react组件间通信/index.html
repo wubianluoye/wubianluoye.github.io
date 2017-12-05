@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>关于splice和slice | wubianluoye</title>
+  <title>react组件间通信 | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="splice() splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。 splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。 如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。">
-<meta name="keywords" content="JavaScript">
+  <meta name="description" content="父组件可以给子组件传递属性， 父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状 态，不要这么做，会降低组件的内聚度，提高组件间的耦合度">
+<meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于splice和slice">
-<meta property="og:url" content="https://github.com/wubianluoye/2017/12/05/关于splice和slice/index.html">
+<meta property="og:title" content="react组件间通信">
+<meta property="og:url" content="https://github.com/wubianluoye/2017/12/05/react组件间通信/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="splice() splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。 splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。 如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。">
+<meta property="og:description" content="父组件可以给子组件传递属性， 父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状 态，不要这么做，会降低组件的内聚度，提高组件间的耦合度">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-05T03:27:14.927Z">
+<meta property="og:updated_time" content="2017-12-05T05:54:03.834Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于splice和slice">
-<meta name="twitter:description" content="splice() splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。 splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。 如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。">
+<meta name="twitter:title" content="react组件间通信">
+<meta name="twitter:description" content="父组件可以给子组件传递属性， 父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状 态，不要这么做，会降低组件的内聚度，提高组件间的耦合度">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -159,40 +159,58 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-关于splice和slice" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react组件间通信" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      关于splice和slice
+      react组件间通信
     </h1>
   
 
         
-        <a href="/2017/12/05/关于splice和slice/" class="archive-article-date">
-  	<time datetime="2017-12-05T01:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+        <a href="/2017/12/05/react组件间通信/" class="archive-article-date">
+  	<time datetime="2017-12-05T03:39:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>splice()</strong></p>
-<p>splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</p>
-<p>splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。</p>
-<p>如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。</p>
+        <p>父组件可以给子组件传递属性，</p>
+<p>父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状</p>
+<p>态，不要这么做，会降低组件的内聚度，提高组件间的耦合度</p>
 <a id="more"></a>
-<table><br>  <tr><br>    <th width="40%," bgcolor="skyblue">参数</th><br>    <th width="50%" ,="" bgcolor="skyblue">描述</th><br>  </tr><br>  <tr><br>    <td> index 必需。 </td><br>    <td> 整数，规定添加/删除项目的位置，使用负数可从数组结尾处规定位置。</td><br>  </tr><br>  <tr><br>    <td>howmany 必需。</td><br>    <td>要删除的项目数量。如果设置为 0，则不会删除项目。</td><br>  </tr><tr><br>    <td>item1, …, itemX 可选。</td><br>    <td> itemX 可选。向数组添加的新项目。</td><br>  </tr><br></table>
+<p>子组件可以调用父组件的方法，前提是父组件已经把方法传递给子组件了</p>
+<p>这样的话，只要外层有至少一个共同的父组件，这两个组件就都可以通过共同的父组件进行通信</p>
+<pre><code>React.addons.LinkedStateMixin         为 react提供的 双向绑定的react-with-addons.min.js
+mixins:[React.addons.LinkedStateMixin]
+&lt;input type=&quot;text&quot; onClick={this.linkState(&apos;name&apos;)} style={{margin:"5px 0"}}/&gt;
+</code></pre><p>双向绑定。。<br>为单个数据挂载。。</p>
+<pre><code>sexc:function(e){
+    this.setState({
+        sex:e.target.value
+    })
+}
+</code></pre><p>一个函数处理多个事件</p>
+<pre><code>aal:function(type){
+    var that=this;
 
-<p><strong>slice()</strong></p>
-<p>slice() 方法可从已有的数组中返回选定的元素。</p>
-<p><strong>语法</strong></p>
-<p><strong>arrayObject.slice(start,end)</strong></p>
-<p><strong>返回值</strong></p>
-<p>返回一个新的数组，包含从 start 到 end （不包括该元素）的 arrayObject 中的元素。<br>请注意，该方法并不会修改数组，而是返回一个子数组。如果想删除数组中的一段元素，应该使用方法 Array.splice()。</p>
-<table><br>  <tr><br>    <th width="40%," bgcolor="skyblue">参数</th><br>    <th width="50%" ,="" bgcolor="skyblue">描述</th><br>  </tr><br>  <tr><br>    <td>start 必需。</td><br>    <td>规定从何处开始选取。如果是负数，那么它规定从数组尾部开始算起的位置。也就是说，-1 指最后一个元素，-2 指倒数第二个元素，以此类推。</td><br>  </tr><br>  <tr><br>    <td>end 可选。</td><br>    <td>规定从何处结束选取。该参数是数组片断结束处的数组下标。如果没有指定该参数，那么切分的数组包含从 start 到数组结束的所有元素。如果这个参数是负数，那么它规定的是从数组尾部开始算起的元素。</td><br></tr></table>
+    return function(e){
+        var obj={};
+
+        obj[type]=e.target.value;
+        that.setState(obj);
+    }
+}
+&lt;div&gt;
+&lt;input type=&quot;text&quot; onChange={this.aal(&apos;age&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}
+&lt;input type=&quot;text&quot; onChange={this.aal(&apos;name&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}
+&lt;input type=&quot;text&quot; onChange={this.aal(&apos;sex&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}
+&lt;/div&gt;
+</code></pre>
       
 
       
@@ -205,7 +223,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">React</a>
         		</li>
       		
 		</ul>
@@ -261,7 +279,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrklEQVR42u3a22ojMRAEUP//TyewT4Fgp6pbM/bCmScTX6QzAamn1I9HfH39u36/zv/y+92f1/6TqwsPDw9vNPVn12tA+91nU2y/m4yLh4eHdzVvthnk380/n8yh+B08PDy8t/LyYnqGf3378PDw8P5HXgLIB04KYjw8PLxP5iWBwuwz7XL/tqwFDw8PL+ZtDsDe9fqm8z08PDy88lQ9X3Znm0QSB29mi4eHh3cFrx0gD2FnDVh5kV1sGHh4eHhHeUk42x59zcKC/N1iJnh4eHg38totpI19NzerCCzw8PDwLua1VeimbSu5HbNQ47HZu/Dw8PC6TKAucGfhwp66iUXw8PDw9rz9w39e7Obvtrfj6S/j4eHhXcCbnRPtMXmckd/0aHvAw8PDu4A3O9rfh8Kz2r94PsDDw8M7xMsPtNpFfDbWrPXqj2IaDw8P7yivLYuTwU5tHnXokD8x4OHh4S14+RTPtl7lgUXeplD3lOHh4eEteHko0DZpJdfsqKw4+sLDw8M7ymvj2nyJn92OujssnhseHh7eKd6G1C7x+6i3bvPCw8PDu5G3WfrzCDhf+tti+o+NAQ8PD2/Bm02iPejaBArR08DrUfDw8PAu423ihjZybUvw/GgNDw8P7x5eskyfOhhrM+b28CxC4uHh4V3Ai0rVRXm9CW1nJTseHh7eWV5e4O5D202hnG8GT2NcPDw8vKO8tow+u2Hs97Gn/wY8PDy8o7yv8so3gzyWbccqohA8PDy8C3ibMKKF5fFEUihv2gvw8PDw9rxTD//5ndscqtXfxcPDw7uMNwsU8hL5VKtB3ciFh4eH9wG8tqjdtHDlbQd4eHh4n8nbRBJJzDGDHesXw8PDwyt5bYPUrKVgM26Cx8PDw7uH124e7ZLdHlzlLQUHTvbw8PDwOt432o9K3yjSmtEAAAAASUVORK5CYII=" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACxUlEQVR42u3aQW6kQAwF0Nz/0hlpViNlgP/LVXQWj1WrQwPPkcqF7a+v+Pj+e/z8fHXmv8fknPtvth14eHh4S49+dfw85+qb+3DcB+j+m/u7PwQLDw8P7xivTQb3gbh/xGSJT8DJr/Dw8PA+y8sft90Q318nSS14eHh4v5mXLP2Tv7b3xcPDw/sULylG5NvrpHCQJJL2mnh4eHjv8CYNsE99fqm/h4eHh1d21fNUsbZFbjfN9XPi4eHhHeC1bapkQ9w2t9rSbTuUgIeHh3ea15YD8hJtO7yVFy8eyhB4eHh4W3l5UbUdnJo3xvIS7WViwMPDwzvAS4af2lZWO4IwyWn5ywAeHh7eCd7konmA1sYC2sJxnanw8PDwxu/s+aa23Vjn4csLFnh4eHhv8tpCbVKqWCtetHeJwo2Hh4d3gLeWGNYSxmQIYBQaPDw8vK289uEmUUw235PW2sOWGg8PD28rbz5utWvpT8KXFC/w8PDw3uG1jLxl1Q4KTJLWZWLAw8PD28RrF9y8AZbccte4wCISDw8Pb8xryw35uNUkVaylBDw8PLzTvHxDnNwyD0SLScolD/83PDw8vDFvvmFtG/z54FRbFL5MCXh4eHgHeO3CnQ9UrY0CtCnk0oKHh4d3mDdnnOs6tYkEDw8P7zQvf9VPbj8ZO1ibmHpIDHh4eHhbeWuP2IZjLXz5OVHxFw8PD28Tb36hdhRg0lQbTY3h4eHhbeIl+LUiQs7IAzppquHh4eHt4n2XRz5kkC/x88RQVKnx8PDwzq60RZJISrQ5ey2IIyQeHh5eyVsrSUyW9Xk6KRIDHh4e3jFengzyZlXeQot6dGvtNzw8PLxfwEvGnvKixlqY6pkIPDw8vA/xksLB2kY8L14k98XDw8N7h7erGBFtc5eKuW1JFw8PD+8cb60Blg8E5I2rtW30kf4eHh4e3v9/9Qd5AWnOScwHZwAAAABJRU5ErkJggg==" alt="微信分享二维码">
     </div>
 </div>
 
@@ -275,18 +293,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/12/05/微信二次开发-从环境配置到开发/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          微信二次开发-从环境配置到开发
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/05/chrome插件开发api文档/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">chrome插件开发api文档</div>
+    <a href="/2017/12/05/keep-alive使复用子组件不刷新/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">keep-alive使复用子组件不刷新</div>
       <i class="icon-circle-right"></i>
     </a>
   
