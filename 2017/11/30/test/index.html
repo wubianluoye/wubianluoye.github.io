@@ -6,23 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>单行文本溢出与多行文本溢出 | wubianluoye</title>
+  <title>test | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。实现方法： overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">
-<meta name="keywords" content="css">
+  <meta name="description" content="yssdjsdlgjsdkjlsjglsjl">
+<meta name="keywords" content="test">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单行文本溢出与多行文本溢出">
-<meta property="og:url" content="https://github.com/wubianluoye/2017/12/05/单行文本溢出与多行文本溢出/index.html">
+<meta property="og:title" content="test">
+<meta property="og:url" content="https://github.com/wubianluoye/2017/11/30/test/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。实现方法： overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">
+<meta property="og:description" content="yssdjsdlgjsdkjlsjglsjl">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://i.imgur.com/FNwR1zc.png">
-<meta property="og:image" content="https://i.imgur.com/K16jnv2.png">
-<meta property="og:updated_time" content="2017-12-05T02:46:24.569Z">
+<meta property="og:updated_time" content="2017-12-05T07:34:29.147Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单行文本溢出与多行文本溢出">
-<meta name="twitter:description" content="如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。实现方法： overflow: hidden; text-overflow:ellipsis; white-space: nowrap;">
-<meta name="twitter:image" content="https://i.imgur.com/FNwR1zc.png">
+<meta name="twitter:title" content="test">
+<meta name="twitter:description" content="yssdjsdlgjsdkjlsjglsjl">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -162,60 +159,27 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-单行文本溢出与多行文本溢出" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-test" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      单行文本溢出与多行文本溢出
+      test
     </h1>
   
 
         
-        <a href="/2017/12/05/单行文本溢出与多行文本溢出/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:43:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+        <a href="/2017/11/30/test/" class="archive-article-date">
+  	<time datetime="2017-11-30T03:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>如果实现单行文本的溢出显示省略号同学们应该都知道用text-overflow:ellipsis属性来，当然还需要加宽度width属来兼容部分浏览。<br>实现方法：</p>
-<pre><code>overflow: hidden;
-text-overflow:ellipsis;
-white-space: nowrap;
-</code></pre><a id="more"></a>
-<p>效果如图：</p>
-<p><img src="https://i.imgur.com/FNwR1zc.png" alt=""></p>
-<p>但是这个属性只支持单行文本的溢出显示省略号，如果我们要实现多行文本溢出显示省略号呢。<br>接下来重点说一说多行文本溢出显示省略号，如下。<br>实现方法：</p>
-<pre><code>display: -webkit-box;
--webkit-box-orient: vertical;
--webkit-line-clamp: 3;
-overflow: hidden;
-</code></pre><p>效果如图：</p>
-<p><img src="https://i.imgur.com/K16jnv2.png" alt=""></p>
-<p>其他浏览器的解决方案<br>目前没有什么CSS的属性可以直接控制多行文本的省略显示，比较靠谱的办法应该就是利用相对定位在最后面加上一个省略号了，代码可以参考下面：</p>
-<pre><code>p {
-    position:relative;
-    line-height:1.5em;
-    /* 高度为需要显示的行数*行高，比如这里我们显示两行，则为3 */
-    height:3em;
-    overflow:hidden;
-}
-p:after {
-    content:&quot;...&quot;;
-    position:absolute;
-    bottom:0;
-    right:0;
-    padding: 0 5px;
-    background-color: #fff;
-}
-</code></pre><p>不过这样会有一点问题：</p>
-<p>需要知道显示的行数并设置行高才行；</p>
-<p>IE6/7不支持after和content，需要添加一个标签来代替；</p>
-<p>省略号的背景颜色跟文本背景颜色一样，并且可能会遮住部分文字，建议可以使用渐变的png背景图片代替。</p>
+        <p>yssdjsdlgjsdkjlsjglsjl</p>
 
       
 
@@ -229,7 +193,7 @@ p:after {
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
         		</li>
       		
 		</ul>
@@ -285,7 +249,7 @@ p:after {
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACs0lEQVR42u3aQW7DMAwEwPz/0ynQa2BnSYpNCoxPReLaGhWQ1CUfj/h6/l5Xn1x9+3rP1W+9PiEZw7ELDw8PrzX0q+tqKPf35xORM5pjwMPDw1vjzYeVbAnJu/JnRs/Bw8PD+ygvH3T++f3bq0dwPDw8vG/j9QaRbAn5UR4PDw/ve3jJa+6X+/tnTp7zR1kLHh4eXi1rLRTAvuHnxfoeHh4e3qCqXt0w7mOI6vQlm82bEeLh4eEt8CYDyoteSWQwCYjfjBwPDw9vjZdHq/kJNsH0oodCmIuHh4d3lJcEo1VA3kYwX72jwzQeHh7eUV7eJjWJdKtNVGfbsPDw8PA2eM1mptYE9aLhaoSBh4eHt8fLX5bEtXl5rDdB1YYtPDw8vD1eLzI4G9dWg+Po2I2Hh4e3zNs4/ubtCL0je7NpAA8PD+8QL1mU87ghP3D3Qt7oWzw8PLw1Xr64Vw/Nk23jwCTi4eHhLfCqR9t8I6neWf28Ot14eHh4Z3nJMboaGSQbTO9IXW7YwsPDw1vg5XX2vGA22TDyMlh+iMfDw8M7xest9NVB5G1SvWm93Bjw8PDwFnj5v/STuLYatvZi5cLfEA8PD2/Ay0tKx8r5rQij2byFh4eHt8CrPm4+iFNNA+XwAg8PD+8or7c9JAWq6rJeBTxvLzw8PLw93iQsqMYK97+bTFzhGI2Hh4e3xqsOrtpqUF3QE3ZhuvHw8PCWeZMlflSF6+1meYCLh4eHd4j3LF6nwtn5W5IoBA8PD2+DN1l2q0ftamvC5C14eHh427w8Dpj0Jsznvhn+4uHh4a3xeiFFr3CVHILzvQsPDw/vP/LyMtik5NacUDw8PLyP8u4PvnnJv3pPbxLx8PDwtnl521Ph0fFG0mvPKnRG4OHh4R3lVQtgediaL/G9xoV8VHh4eHiHeD+3MX2CpeqWyAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aQY7DIAwF0N7/0h1ptqOk3zZTKfBYVWmT8Fi4xub1isf7d1xdvxr39/799u+9iwcGBsZjGdWpXH17P/UcefXkqydgYGCcw6iGwvvgmATcfMmiPwAMDAyMIvV+itXrGBgYGJMpJgF0EmQxMDAweoFyUrC7X4Iv7cUxMDAeyKg2Br75+R/7GxgYGA9hvIujF0yTMDqaFQYGxtaMpInYS+D+48kfwjEGBsbWjF6TcnJX3igtJ4sYGBibMnpHwe5DajU0945oYGBgnMDIN5NJ4KsuxJx3uRfHwMDYiNHLr/JpJc9Mnlwt7WFgYOzKKGeUxdJ/ddLVA2QYGBgnMHoHLCaA+99P2qUYGBg7MSaJWjV9TBLEPOhjYGCcxui1KqtTzzeo5UMYGBgYWzMmN1c3qNVDGHmZDwMDY29G3jhcdaXaSIgOkGFgYGzNyIv7k+MRvWZDst3FwMA4gZEfrVgLzkt1SXsVAwNjb0b+ytdg5KG5V4bDwMDYm5EX7ucJYj7FciqJgYFxAKMaKPNUMk8ZR0uGgYGxNaNXrO+F10JZfx52MTAwNmK8iyMPo/kqJg2AD4uFgYGxNaMa7Bb0SIultF5KioGBsR+j12KcHKFINrHl9BEDA+MAxqpXrgI3G5kYGBjHM77TzmxmshgYGBjxJjYPspMlKPRjMTAwNmLkzYDklfMjGosbmRgYGA9nzBsDvalU2QswGBgYz2P8AECA2xn/0aX5AAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -299,20 +263,15 @@ p:after {
   
 <nav id="article-nav">
   
-    <a href="/2017/12/05/css头尾固定，中间滚动布局/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/11/30/多设备同步hexo博客/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          css头尾固定，中间滚动布局
+          多设备同步hexo博客
         
       </div>
     </a>
   
-  
-    <a href="/2017/12/05/选项按钮美化label/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">选项按钮美化label</div>
-      <i class="icon-circle-right"></i>
-    </a>
   
 </nav>
 
