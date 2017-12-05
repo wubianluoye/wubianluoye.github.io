@@ -8,8 +8,28 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="%5Bobject%20Object%5D" rel="hub"/>
     <description></description>
-    <pubDate>Tue, 05 Dec 2017 05:54:03 GMT</pubDate>
+    <pubDate>Tue, 05 Dec 2017 03:54:44 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>react-router的一些问题</title>
+      <link>https://github.com/wubianluoye/2017/12/05/react-router%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</link>
+      <guid>https://github.com/wubianluoye/2017/12/05/react-router%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/</guid>
+      <pubDate>Tue, 05 Dec 2017 03:54:17 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;react-router 有很多个版本，所以有很多个写法，在npm安装时，需要根据route的版本来找api，不然要被坑死！&lt;/p&gt;
+&lt;p&gt;react-router 4 版本&lt;a href=&quot;https://reacttraining.cn/web/guides/quick
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>react-router 有很多个版本，所以有很多个写法，在npm安装时，需要根据route的版本来找api，不然要被坑死！</p><p>react-router 4 版本<a href="https://reacttraining.cn/web/guides/quick-start" target="_blank" rel="noopener">https://reacttraining.cn/web/guides/quick-start</a></p><p> 这个不知道是几的版本<a href="https://react-guide.github.io/react-router-cn/，貌似安装后里面没有Link模块。demo报错" target="_blank" rel="noopener">https://react-guide.github.io/react-router-cn/，貌似安装后里面没有Link模块。demo报错</a></p>]]></content:encoded>
+      
+      <comments>https://github.com/wubianluoye/2017/12/05/react-router%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>react组件间通信</title>
@@ -85,25 +105,6 @@
       <content:encoded><![CDATA[<p><a href="http://www.ituring.com.cn/book/miniarticle/53809" target="_blank" rel="noopener">three.js在线书籍（中文）</a></p><p><strong>淘宝造物节demo</strong><br><a id="more"></a></p><ul><li><a href="https://jovenpan.github.io/panorama/" target="_blank" rel="noopener">全景画-原型Demo</a></li><li><a href="https://jovenpan.github.io/panorama/?page=tao" target="_blank" rel="noopener">全景画-仿淘宝造物节</a></li><li><a href="https://jovenpan.github.io/panorama/?page=anta" target="_blank" rel="noopener">全景画-仿安踏广告</a></li></ul>]]></content:encoded>
       
       <comments>https://github.com/wubianluoye/2017/12/05/%E5%85%A8%E6%99%AF%E5%9B%BEdemo/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>git到远程服务器</title>
-      <link>https://github.com/wubianluoye/2017/12/05/git%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
-      <guid>https://github.com/wubianluoye/2017/12/05/git%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
-      <pubDate>Tue, 05 Dec 2017 02:53:48 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;今天想把最近的一些小代码push到github上&lt;/p&gt;
-&lt;p&gt;我先是将该目录git init进行初始化，然后&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;#git add -A 
-&lt;/code&gt;&lt;/pre&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>今天想把最近的一些小代码push到github上</p><p>我先是将该目录git init进行初始化，然后</p><pre><code>#git add -A </code></pre><a id="more"></a><p>接着</p><pre><code>#git commit -m “description...”</code></pre><p>然后在github上新建一个远程库，想要将其与我本地的库相关联，使用：</p><pre><code>#git remote add origin git@github.com:YOURGITHUBNAME/REPOSITORY.git</code></pre><p>并push到远程端</p><p>至此，一切顺利</p><p>于是，我使用了命令：</p><pre><code>#git push -u origin master</code></pre><p>结果报错如下：</p><pre><code>error: failed to push some refs to &apos;git@github.com:你的远程库名.git&apos;hint: Updates were rejected because the tip of your current branch is behindhint: its remote counterpart. Integrate the remote changes (e.g.hint: &apos;git pull ...&apos;) before pushing again.hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</code></pre><p>从提示可以看出，是由于两者不同步，因此需要先pull，进行合并然后在进行push，<br>因此先使用</p><pre><code>git pull --rebase origin master</code></pre><p>将远程文件同步下来。</p><p>然后再执行推送</p><pre><code>git push -u origin master</code></pre><p>终于，成功！</p>]]></content:encoded>
-      
-      <comments>https://github.com/wubianluoye/2017/12/05/git%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread</comments>
     </item>
     
   </channel>

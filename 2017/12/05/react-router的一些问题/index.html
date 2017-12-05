@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>react组件间通信 | wubianluoye</title>
+  <title>react-router的一些问题 | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="父组件可以给子组件传递属性， 父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状 态，不要这么做，会降低组件的内聚度，提高组件间的耦合度">
+  <meta name="description" content="react-router 有很多个版本，所以有很多个写法，在npm安装时，需要根据route的版本来找api，不然要被坑死！ react-router 4 版本https://reacttraining.cn/web/guides/quick-start  这个不知道是几的版本https://react-guide.g">
 <meta name="keywords" content="React">
 <meta property="og:type" content="article">
-<meta property="og:title" content="react组件间通信">
-<meta property="og:url" content="https://github.com/wubianluoye/2017/12/05/react组件间通信/index.html">
+<meta property="og:title" content="react-router的一些问题">
+<meta property="og:url" content="https://github.com/wubianluoye/2017/12/05/react-router的一些问题/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="父组件可以给子组件传递属性， 父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状 态，不要这么做，会降低组件的内聚度，提高组件间的耦合度">
+<meta property="og:description" content="react-router 有很多个版本，所以有很多个写法，在npm安装时，需要根据route的版本来找api，不然要被坑死！ react-router 4 版本https://reacttraining.cn/web/guides/quick-start  这个不知道是几的版本https://react-guide.github.io/react-router-cn/，貌似安装后里面没有Link模">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-05T05:54:03.834Z">
+<meta property="og:updated_time" content="2017-12-05T03:54:44.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="react组件间通信">
-<meta name="twitter:description" content="父组件可以给子组件传递属性， 父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状 态，不要这么做，会降低组件的内聚度，提高组件间的耦合度">
+<meta name="twitter:title" content="react-router的一些问题">
+<meta name="twitter:description" content="react-router 有很多个版本，所以有很多个写法，在npm安装时，需要根据route的版本来找api，不然要被坑死！ react-router 4 版本https://reacttraining.cn/web/guides/quick-start  这个不知道是几的版本https://react-guide.github.io/react-router-cn/，貌似安装后里面没有Link模">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -159,58 +159,30 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-react组件间通信" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-react-router的一些问题" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      react组件间通信
+      react-router的一些问题
     </h1>
   
 
         
-        <a href="/2017/12/05/react组件间通信/" class="archive-article-date">
-  	<time datetime="2017-12-05T03:39:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+        <a href="/2017/12/05/react-router的一些问题/" class="archive-article-date">
+  	<time datetime="2017-12-05T03:54:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>父组件可以给子组件传递属性，</p>
-<p>父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状</p>
-<p>态，不要这么做，会降低组件的内聚度，提高组件间的耦合度</p>
-<a id="more"></a>
-<p>子组件可以调用父组件的方法，前提是父组件已经把方法传递给子组件了</p>
-<p>这样的话，只要外层有至少一个共同的父组件，这两个组件就都可以通过共同的父组件进行通信</p>
-<pre><code>React.addons.LinkedStateMixin         为 react提供的 双向绑定的react-with-addons.min.js
-mixins:[React.addons.LinkedStateMixin]
-&lt;input type=&quot;text&quot; onClick={this.linkState(&apos;name&apos;)} style={{margin:"5px 0"}}/&gt;
-</code></pre><p>双向绑定。。<br>为单个数据挂载。。</p>
-<pre><code>sexc:function(e){
-    this.setState({
-        sex:e.target.value
-    })
-}
-</code></pre><p>一个函数处理多个事件</p>
-<pre><code>aal:function(type){
-    var that=this;
+        <p>react-router 有很多个版本，所以有很多个写法，在npm安装时，需要根据route的版本来找api，不然要被坑死！</p>
+<p>react-router 4 版本<a href="https://reacttraining.cn/web/guides/quick-start" target="_blank" rel="noopener">https://reacttraining.cn/web/guides/quick-start</a></p>
+<p> 这个不知道是几的版本<a href="https://react-guide.github.io/react-router-cn/，貌似安装后里面没有Link模块。demo报错" target="_blank" rel="noopener">https://react-guide.github.io/react-router-cn/，貌似安装后里面没有Link模块。demo报错</a></p>
 
-    return function(e){
-        var obj={};
-
-        obj[type]=e.target.value;
-        that.setState(obj);
-    }
-}
-&lt;div&gt;
-&lt;input type=&quot;text&quot; onChange={this.aal(&apos;age&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}
-&lt;input type=&quot;text&quot; onChange={this.aal(&apos;name&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}
-&lt;input type=&quot;text&quot; onChange={this.aal(&apos;sex&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}
-&lt;/div&gt;
-</code></pre>
       
 
       
@@ -279,7 +251,7 @@ mixins:[React.addons.LinkedStateMixin]
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACxUlEQVR42u3aQW6kQAwF0Nz/0hlpViNlgP/LVXQWj1WrQwPPkcqF7a+v+Pj+e/z8fHXmv8fknPtvth14eHh4S49+dfw85+qb+3DcB+j+m/u7PwQLDw8P7xivTQb3gbh/xGSJT8DJr/Dw8PA+y8sft90Q318nSS14eHh4v5mXLP2Tv7b3xcPDw/sULylG5NvrpHCQJJL2mnh4eHjv8CYNsE99fqm/h4eHh1d21fNUsbZFbjfN9XPi4eHhHeC1bapkQ9w2t9rSbTuUgIeHh3ea15YD8hJtO7yVFy8eyhB4eHh4W3l5UbUdnJo3xvIS7WViwMPDwzvAS4af2lZWO4IwyWn5ywAeHh7eCd7konmA1sYC2sJxnanw8PDwxu/s+aa23Vjn4csLFnh4eHhv8tpCbVKqWCtetHeJwo2Hh4d3gLeWGNYSxmQIYBQaPDw8vK289uEmUUw235PW2sOWGg8PD28rbz5utWvpT8KXFC/w8PDw3uG1jLxl1Q4KTJLWZWLAw8PD28RrF9y8AZbccte4wCISDw8Pb8xryw35uNUkVaylBDw8PLzTvHxDnNwyD0SLScolD/83PDw8vDFvvmFtG/z54FRbFL5MCXh4eHgHeO3CnQ9UrY0CtCnk0oKHh4d3mDdnnOs6tYkEDw8P7zQvf9VPbj8ZO1ibmHpIDHh4eHhbeWuP2IZjLXz5OVHxFw8PD28Tb36hdhRg0lQbTY3h4eHhbeIl+LUiQs7IAzppquHh4eHt4n2XRz5kkC/x88RQVKnx8PDwzq60RZJISrQ5ey2IIyQeHh5eyVsrSUyW9Xk6KRIDHh4e3jFengzyZlXeQot6dGvtNzw8PLxfwEvGnvKixlqY6pkIPDw8vA/xksLB2kY8L14k98XDw8N7h7erGBFtc5eKuW1JFw8PD+8cb60Blg8E5I2rtW30kf4eHh4e3v9/9Qd5AWnOScwHZwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtUlEQVR42u3aQY4iMQwFUO5/aUaaVUujKr7tGBj1ywqhqpCXRWwcPx7xeP4dyeef42qG+3n+ne3qmWMDDw8Pr7X0q5EsLpkzeff++futvHoXDw8Pb49XDQbJ1Bubla8ZDw8P7xt4yYF+KlG+fxIPDw/vf+HdB4ac1Eu+8fDw8L6Nlyz6/vtqHbX65HqtBQ8PDy/mnb0Ae8/nj93v4eHh/XreszXOLqhXnojWiYeHh7fAy9Pi6sX/vBGh2kZQ2D88PDy8Q7zqEicp+KQ4m28NHh4e3h4vOfqThqq8CSD/xV7xtxzZ8PDw8GLeRqEhaQJIAlKvTSFy4+Hh4Q14k8BQLVL02hR6G4SHh4f3WV7vQO+VXHvNWOX/DXh4eHiHePMSbX5Y723EY/4CHh4eXrzcXhF2cnnWa88qI/Hw8PCO8qoF0zx1rl5rTQLM5Tbh4eHhLfCSR5PrsfziqtrAWmW/KEbg4eHhjXl5MXTSKDDfoDy0XMY9PDw8vKO83sXSXsKdF4tfbAceHh7eMi8vj1YT6GSefLMKjQV4eHh4a7z5hVaefPeu4noJOh4eHt4Gr1dCzQNAtZlgnoJf1qfx8PDw1nh5el1tO8hT6rxQErVn4eHh4S3w8sbQJI0uJLvFkJCXmMt6PDw8vCKv+vc+CQPJoT+fP6Li4eHhLfCS8NC79JovvRzT8oGHh4c34E3KCu85+qsJ/YtaCx4eHt5RXvWMzQuy+WzVVb14Cw8PD+8o71kc+UF/amuScsPl2vDw8PAWeKN40mqTShY6uVprli3w8PDwirw8GOSfe3f3SWipbgoeHh7eHu9UsSAp/k6CSvkX8fDw8L6Alx/c+aE/CRIvyhB4eHh4H+XNl5iXgHswPDw8vHfy8mVVqfOa6qixAA8PD2+B17sAmxcjJo0L1RQcDw8P7xDvD2Zp2k+WgCfFAAAAAElFTkSuQmCC" alt="微信分享二维码">
     </div>
 </div>
 
@@ -293,18 +265,9 @@ mixins:[React.addons.LinkedStateMixin]
   
 <nav id="article-nav">
   
-    <a href="/2017/12/05/react-router的一些问题/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          react-router的一些问题
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/12/05/keep-alive使复用子组件不刷新/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">keep-alive使复用子组件不刷新</div>
+    <a href="/2017/12/05/react组件间通信/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">react组件间通信</div>
       <i class="icon-circle-right"></i>
     </a>
   
