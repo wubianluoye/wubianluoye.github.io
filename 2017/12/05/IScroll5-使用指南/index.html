@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="wubianluoye">
 <meta property="og:description" content="http://blog.csdn.net/tiw163/article/details/43341759 ###wrapper必须给高度，不然无法滑动。在图片等元素未载入前可能无法确定滚动区域的长宽最好将new IScroll() 放在onload中原生写法">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2017-12-05T02:40:25.143Z">
+<meta property="og:updated_time" content="2017-12-05T03:17:00.107Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IScroll5 使用指南">
 <meta name="twitter:description" content="http://blog.csdn.net/tiw163/article/details/43341759 ###wrapper必须给高度，不然无法滑动。在图片等元素未载入前可能无法确定滚动区域的长宽最好将new IScroll() 放在onload中原生写法">
@@ -180,8 +180,18 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p> <a href="http://blog.csdn.net/tiw163/article/details/43341759" target="_blank" rel="noopener">http://blog.csdn.net/tiw163/article/details/43341759</a></p>
-<p>###wrapper必须给高度，不然无法滑动。<br>在图片等元素未载入前可能无法确定滚动区域的长宽最好将new IScroll() 放在onload中<br>原生写法<br><a id="more"></a><br>    <script src="iscroll.js"><script><br>        <script><br>            var myscroll;<br>            function loaded(){<br>               setTimeout(function(){<br>                    myscroll=new iScroll(“wrapper”);<br>                 }，100 );<br>            }<br>               window.addEventListener(“load”,loaded,false);<br>     </script></p>
-<p>或者是</p>
+<p>###wrapper必须给高度，不然无法滑动。<br>在图片等元素未载入前可能无法确定滚动区域的长宽最好将new IScroll() 放在onload中<br>原生写法<br><a id="more"></a></p>
+<pre><code>&lt;script src=&quot;iscroll.js&quot;&gt;&lt;script&gt;
+    &lt;script&gt;
+        var myscroll;
+        function loaded(){
+           setTimeout(function(){
+                myscroll=new iScroll(&quot;wrapper&quot;);
+             }，100 );
+        }
+           window.addEventListener(&quot;load&quot;,loaded,false);
+ &lt;/script&gt;
+</code></pre><p>或者是</p>
 <pre><code>&lt;script src=&quot;iscroll.js&quot;&gt;&lt;script&gt;
     &lt;script&gt;
         var myscroll;
