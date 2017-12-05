@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>Archives: 2017 | wubianluoye</title>
+  <title>keep-alive使复用子组件不刷新 | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5,开发者,编程,代码,开源,IT网站,Developer,Coder,html,css,css3,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wubianluoye">
-<meta property="og:url" content="https://github.com/wubianluoye/archives/2017/index.html">
+  <meta name="description" content="问题：在写路由时，通过跳转到同一路由改变id来改变数据，发现只有第一次的数据有用，其他的点击还是第一个路由进来的数据。 原因：在外面加了一层 &amp;lt;keep-alive&amp;gt;     &amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt; &a">
+<meta name="keywords" content="Vue">
+<meta property="og:type" content="article">
+<meta property="og:title" content="keep-alive使复用子组件不刷新">
+<meta property="og:url" content="https://github.com/wubianluoye/2017/12/05/keep-alive使复用子组件不刷新/index.html">
 <meta property="og:site_name" content="wubianluoye">
+<meta property="og:description" content="问题：在写路由时，通过跳转到同一路由改变id来改变数据，发现只有第一次的数据有用，其他的点击还是第一个路由进来的数据。 原因：在外面加了一层 &amp;lt;keep-alive&amp;gt;     &amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt; &amp;lt;/keep-alive&amp;gt;">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-12-05T03:14:10.754Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wubianluoye">
+<meta name="twitter:title" content="keep-alive使复用子组件不刷新">
+<meta name="twitter:description" content="问题：在写路由时，通过跳转到同一路由改变id来改变数据，发现只有第一次的数据有用，其他的点击还是第一个路由进来的数据。 原因：在外面加了一层 &amp;lt;keep-alive&amp;gt;     &amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt; &amp;lt;/keep-alive&amp;gt;">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -155,36 +159,51 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-keep-alive使复用子组件不刷新" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/keep-alive使复用子组件不刷新/" class="archive-article-date">
-  	<time datetime="2017-12-05T03:05:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/keep-alive使复用子组件不刷新/">keep-alive使复用子组件不刷新</a>
+    <h1 class="article-title" itemprop="name">
+      keep-alive使复用子组件不刷新
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2017/12/05/keep-alive使复用子组件不刷新/" class="archive-article-date">
+  	<time datetime="2017-12-05T03:05:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>问题：在写路由时，通过跳转到同一路由改变id来改变数据，发现只有第一次的数据有用，其他的点击还是第一个路由进来的数据。</p>
+<p>原因：在<router-view></router-view>外面加了一层<keep-alive></keep-alive></p>
+<pre><code>&lt;keep-alive&gt;
+    &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/keep-alive&gt;
+</code></pre><a id="more"></a>
+<p>keep-alive 缓存组件在内存中，再次进入该页面不会重新渲染，用于保存页面的原始状态。<br>这就是原因！！！</p>
+<p>解决方法有几种：</p>
+<p>1.删除keep-alive</p>
+<p>2.保留keep-alive，使用$watch()进行检测</p>
+<p>3.保留keep-alive，使用beforeRouteUpdate进行检测</p>
+<p>4.保留keep-alive，使用beforeRouteEnter 进行检测</p>
+<pre><code>beforeRouteEnter (to, from, next) {
+  next(vm =&gt; {
+    vm.getdata()
+  })
+}
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -196,364 +215,105 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsklEQVR42u3aUU4jMRAEUO5/afYCJFPldrNBevlChPH4Gcm2qvvrK/58v/jk374fczLOhQ8eHh7epannL05GfvVt/mwynx/GxMPDw1vjvX998pr3zybHQ74cxZLh4eHhfRiv3abzMV+NjIeHh/cXeckFt70ct2EEHh4e3ifwzoZun8qX4CzwxcPDw/sdXl5F+pyfV+p7eHh4eOOqeh4E5Bt9u6Hnh8EPo+Hh4eEt8PINt53Q2XV8fl3Gw8PD2+ZNtvizYyBZgrYM9nI0PDw8vGVeXvLPefOWqbwF4aGyh4eHh3eJNwlwk9fcijbaeAIPDw9vm5e/cj71nJEcGNE4eHh4eAu8tlEgj3HbFquzUlx9+uHh4eGNeZNS01nUWxT+yxLdqHaHh4eHF/DawlUbsN66xB+GyHh4eHgLvFuRxGTSeXvWWeyLh4eHd5eXXIsv1NDKjf4sJi6arvDw8PAu8d5Pog0L2mLY/OB56CnDw8PDu8Rry11tOWolVogXFA8PD2+DNynt501R+VLmbVVRuIyHh4e3wEsyz/ZIuBvX3rr04+Hh4d3l5Zt40kzQhgtnLVx1TxkeHh7eJV5+GORD5xM9W6wi/MXDw8Nb4E1aBM5KXGfPthd0PDw8vN/h5Rt33kbQHgx5GJGEIHh4eHh7vLNCV36QtL9vr9EP/zE8PDy8ZV5bgspHyJcgby84rOzh4eHhLfBaUntbz8OIxTIYHh4e3hHvu/zkLQX54XEWT0QRCR4eHt4Cr91wDy+1gxEmV208PDy8PV57GCS/aQ+Ps+A4eTseHh7eHi+PVnNeTpq3cD1EEnh4eHj/lddOqH12fizVnQt4eHh4y7xJ29YkVsgPFTw8PLzf4SUX3FtRbF6+ypsYHpqu8PDw8K7yDnu14u07L4ZNAogL9T08PDy857/8B5QYVLmzgDL2AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/常用正则表达式/" class="archive-article-date">
-  	<time datetime="2017-12-05T03:00:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/12/05/常用正则表达式/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">常用正则表达式</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/常用正则表达式/">常用正则表达式</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">正则</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/全景图demo/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/全景图demo/">全景图demo</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">VR</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/git到远程服务器/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:53:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/git到远程服务器/">git到远程服务器</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/git-删除远程端文件或文件夹/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:52:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/git-删除远程端文件或文件夹/">git 删除远程端文件或文件夹</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/关于箭头函数需要注意的地方/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:49:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/关于箭头函数需要注意的地方/">关于箭头函数需要注意的地方</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/css头尾固定，中间滚动布局/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:47:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/css头尾固定，中间滚动布局/">css头尾固定，中间滚动布局</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/单行文本溢出与多行文本溢出/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:43:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/单行文本溢出与多行文本溢出/">单行文本溢出与多行文本溢出</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/选项按钮美化label/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:42:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/选项按钮美化label/">选项按钮美化label</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/IScroll5-使用指南/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:34:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/IScroll5-使用指南/">IScroll5 使用指南</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Iscroll</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/2017/page/2/">2</a><a class="extend next" rel="next" href="/archives/2017/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -577,8 +337,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

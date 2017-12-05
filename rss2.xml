@@ -8,8 +8,29 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="%5Bobject%20Object%5D" rel="hub"/>
     <description></description>
-    <pubDate>Tue, 05 Dec 2017 03:03:44 GMT</pubDate>
+    <pubDate>Tue, 05 Dec 2017 03:14:10 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>keep-alive使复用子组件不刷新</title>
+      <link>https://github.com/wubianluoye/2017/12/05/keep-alive%E4%BD%BF%E5%A4%8D%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%88%B7%E6%96%B0/</link>
+      <guid>https://github.com/wubianluoye/2017/12/05/keep-alive%E4%BD%BF%E5%A4%8D%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%88%B7%E6%96%B0/</guid>
+      <pubDate>Tue, 05 Dec 2017 03:05:53 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;问题：在写路由时，通过跳转到同一路由改变id来改变数据，发现只有第一次的数据有用，其他的点击还是第一个路由进来的数据。&lt;/p&gt;
+&lt;p&gt;原因：在&lt;router-view&gt;&lt;/router-view&gt;外面加了一层&lt;keep-alive&gt;&lt;/keep-alive&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;keep-alive&amp;gt;
+    &amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;
+&amp;lt;/keep-alive&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>问题：在写路由时，通过跳转到同一路由改变id来改变数据，发现只有第一次的数据有用，其他的点击还是第一个路由进来的数据。</p><p>原因：在<router-view></router-view>外面加了一层<keep-alive></keep-alive></p><pre><code>&lt;keep-alive&gt;    &lt;router-view&gt;&lt;/router-view&gt;&lt;/keep-alive&gt;</code></pre><a id="more"></a><p>keep-alive 缓存组件在内存中，再次进入该页面不会重新渲染，用于保存页面的原始状态。<br>这就是原因！！！</p><p>解决方法有几种：</p><p>1.删除keep-alive</p><p>2.保留keep-alive，使用$watch()进行检测</p><p>3.保留keep-alive，使用beforeRouteUpdate进行检测</p><p>4.保留keep-alive，使用beforeRouteEnter 进行检测</p><pre><code>beforeRouteEnter (to, from, next) {  next(vm =&gt; {    vm.getdata()  })}</code></pre>]]></content:encoded>
+      
+      <comments>https://github.com/wubianluoye/2017/12/05/keep-alive%E4%BD%BF%E5%A4%8D%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%88%B7%E6%96%B0/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>常用正则表达式</title>
@@ -49,6 +70,25 @@
     </item>
     
     <item>
+      <title>git到远程服务器</title>
+      <link>https://github.com/wubianluoye/2017/12/05/git%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</link>
+      <guid>https://github.com/wubianluoye/2017/12/05/git%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/</guid>
+      <pubDate>Tue, 05 Dec 2017 02:53:48 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;今天想把最近的一些小代码push到github上&lt;/p&gt;
+&lt;p&gt;我先是将该目录git init进行初始化，然后&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;#git add -A 
+&lt;/code&gt;&lt;/pre&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>今天想把最近的一些小代码push到github上</p><p>我先是将该目录git init进行初始化，然后</p><pre><code>#git add -A </code></pre><a id="more"></a><p>接着</p><pre><code>#git commit -m “description...”</code></pre><p>然后在github上新建一个远程库，想要将其与我本地的库相关联，使用：</p><pre><code>#git remote add origin git@github.com:YOURGITHUBNAME/REPOSITORY.git</code></pre><p>并push到远程端</p><p>至此，一切顺利</p><p>于是，我使用了命令：</p><pre><code>#git push -u origin master</code></pre><p>结果报错如下：</p><pre><code>error: failed to push some refs to &apos;git@github.com:你的远程库名.git&apos;hint: Updates were rejected because the tip of your current branch is behindhint: its remote counterpart. Integrate the remote changes (e.g.hint: &apos;git pull ...&apos;) before pushing again.hint: See the &apos;Note about fast-forwards&apos; in &apos;git push --help&apos; for details.</code></pre><p>从提示可以看出，是由于两者不同步，因此需要先pull，进行合并然后在进行push，<br>因此先使用</p><pre><code>git pull --rebase origin master</code></pre><p>将远程文件同步下来。</p><p>然后再执行推送</p><pre><code>git push -u origin master</code></pre><p>终于，成功！</p>]]></content:encoded>
+      
+      <comments>https://github.com/wubianluoye/2017/12/05/git%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8/#disqus_thread</comments>
+    </item>
+    
+    <item>
       <title>git 删除远程端文件或文件夹</title>
       <link>https://github.com/wubianluoye/2017/12/05/git-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E7%AB%AF%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9/</link>
       <guid>https://github.com/wubianluoye/2017/12/05/git-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E7%AB%AF%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9/</guid>
@@ -69,43 +109,6 @@
       <content:encoded><![CDATA[<p>首先，先删除本地的需要删除的文件或者文件夹，然后</p><pre><code>#git add .#git commit -m &apos;del some document&apos;#git push origin master</code></pre><p>3步解决！</p>]]></content:encoded>
       
       <comments>https://github.com/wubianluoye/2017/12/05/git-%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E7%AB%AF%E6%96%87%E4%BB%B6%E6%88%96%E6%96%87%E4%BB%B6%E5%A4%B9/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>关于箭头函数需要注意的地方</title>
-      <link>https://github.com/wubianluoye/2017/12/05/%E5%85%B3%E4%BA%8E%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9/</link>
-      <guid>https://github.com/wubianluoye/2017/12/05/%E5%85%B3%E4%BA%8E%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9/</guid>
-      <pubDate>Tue, 05 Dec 2017 02:49:21 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;箭头函数有几个使用注意点。&lt;/p&gt;
-&lt;p&gt;（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。&lt;/p&gt;
-&lt;p&gt;（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。&lt;br&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>箭头函数有几个使用注意点。</p><p>（1）函数体内的this对象，就是定义时所在的对象，而不是使用时所在的对象。</p><p>（2）不可以当作构造函数，也就是说，不可以使用new命令，否则会抛出一个错误。<br><a id="more"></a><br>（3）不可以使用arguments对象，该对象在函数体内不存在。如果要用，可以用 rest 参数代替。</p><p>（4）不可以使用yield命令，因此箭头函数不能用作 Generator 函数。</p><p>上面四点中，第一点尤其值得注意。this对象的指向是可变的，但是在箭头函数中，它是固定的。</p><p>模块功能主要由两个命令构成：export和import。export命令用于规定模块的对外接口，import命令用于输入其他模块提供的功能。</p>]]></content:encoded>
-      
-      <comments>https://github.com/wubianluoye/2017/12/05/%E5%85%B3%E4%BA%8E%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0%E9%9C%80%E8%A6%81%E6%B3%A8%E6%84%8F%E7%9A%84%E5%9C%B0%E6%96%B9/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>css头尾固定，中间滚动布局</title>
-      <link>https://github.com/wubianluoye/2017/12/05/css%E5%A4%B4%E5%B0%BE%E5%9B%BA%E5%AE%9A%EF%BC%8C%E4%B8%AD%E9%97%B4%E6%BB%9A%E5%8A%A8%E5%B8%83%E5%B1%80/</link>
-      <guid>https://github.com/wubianluoye/2017/12/05/css%E5%A4%B4%E5%B0%BE%E5%9B%BA%E5%AE%9A%EF%BC%8C%E4%B8%AD%E9%97%B4%E6%BB%9A%E5%8A%A8%E5%B8%83%E5%B1%80/</guid>
-      <pubDate>Tue, 05 Dec 2017 02:47:31 GMT</pubDate>
-      <description>
-      
-        &lt;pre&gt;&lt;code&gt;html,body{
-    height:100%;
-}
-&lt;/code&gt;&lt;/pre&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<pre><code>html,body{    height:100%;}</code></pre><a id="more"></a><pre><code>body{    height: 100%;    display: flex;    flex-direction: column;    justify-content: space-between;}/**tBox,顶部盒子，*bBox，尾部盒子*cBox，中间盒子*/.tBox,.bBox{    flex-grow: 0;    flex-shrink:0;}.cBox{    flex-grow: 1;    overflow: auto;}</code></pre>]]></content:encoded>
-      
-      <comments>https://github.com/wubianluoye/2017/12/05/css%E5%A4%B4%E5%B0%BE%E5%9B%BA%E5%AE%9A%EF%BC%8C%E4%B8%AD%E9%97%B4%E6%BB%9A%E5%8A%A8%E5%B8%83%E5%B1%80/#disqus_thread</comments>
     </item>
     
   </channel>
