@@ -8,8 +8,25 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="%5Bobject%20Object%5D" rel="hub"/>
     <description></description>
-    <pubDate>Tue, 05 Dec 2017 05:53:55 GMT</pubDate>
+    <pubDate>Thu, 07 Dec 2017 06:56:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>vue项目中的跨域</title>
+      <link>https://github.com/wubianluoye/2017/12/07/vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%9F%9F/</link>
+      <guid>https://github.com/wubianluoye/2017/12/07/vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%9F%9F/</guid>
+      <pubDate>Thu, 07 Dec 2017 06:47:32 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;在写一些demo时，往往会借用别人的api，但是会有一个问题：有的api会有跨域问题，有的没有。那么，在有跨域问题时，我们使用&lt;br&gt;的axios是没法跨域的。所以…网上找了一波。&lt;/p&gt;
+&lt;p&gt;发现了可以使用jsonp这个轮子来用用。&lt;/p&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>在写一些demo时，往往会借用别人的api，但是会有一个问题：有的api会有跨域问题，有的没有。那么，在有跨域问题时，我们使用<br>的axios是没法跨域的。所以…网上找了一波。</p><p>发现了可以使用jsonp这个轮子来用用。</p><a id="more"></a><pre><code>npm install jsonp --save &amp;&amp; cnpm install jsonp --save</code></pre><p>在需要的页面引入它就行了</p><pre><code>import jsonp from &apos;jsonp&apos;</code></pre><p>在axios的github中也有一个关于这个jsonp库的说明<a href="https://github.com/axios/axios/blob/master/COOKBOOK.md">文档</a></p>]]></content:encoded>
+      
+      <comments>https://github.com/wubianluoye/2017/12/07/vue%E9%A1%B9%E7%9B%AE%E4%B8%AD%E7%9A%84%E8%B7%A8%E5%9F%9F/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>react与redux,dva</title>
@@ -84,27 +101,6 @@
       <content:encoded><![CDATA[<p>父组件可以给子组件传递属性，</p><p>父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状</p><p>态，不要这么做，会降低组件的内聚度，提高组件间的耦合度</p><a id="more"></a><p>子组件可以调用父组件的方法，前提是父组件已经把方法传递给子组件了</p><p>这样的话，只要外层有至少一个共同的父组件，这两个组件就都可以通过共同的父组件进行通信</p><pre><code>React.addons.LinkedStateMixin         为 react提供的 双向绑定的react-with-addons.min.jsmixins:[React.addons.LinkedStateMixin]&lt;input type=&quot;text&quot; onClick={this.linkState(&apos;name&apos;)} style={{margin:"5px 0"}}/&gt;</code></pre><p>双向绑定。。<br>为单个数据挂载。。</p><pre><code>sexc:function(e){    this.setState({        sex:e.target.value    })}</code></pre><p>一个函数处理多个事件</p><pre><code>aal:function(type){    var that=this;    return function(e){        var obj={};        obj[type]=e.target.value;        that.setState(obj);    }}&lt;div&gt;&lt;input type=&quot;text&quot; onChange={this.aal(&apos;age&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}&lt;input type=&quot;text&quot; onChange={this.aal(&apos;name&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}&lt;input type=&quot;text&quot; onChange={this.aal(&apos;sex&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}&lt;/div&gt;</code></pre>]]></content:encoded>
       
       <comments>https://github.com/wubianluoye/2017/12/05/react%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>keep-alive使复用子组件不刷新</title>
-      <link>https://github.com/wubianluoye/2017/12/05/keep-alive%E4%BD%BF%E5%A4%8D%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%88%B7%E6%96%B0/</link>
-      <guid>https://github.com/wubianluoye/2017/12/05/keep-alive%E4%BD%BF%E5%A4%8D%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%88%B7%E6%96%B0/</guid>
-      <pubDate>Tue, 05 Dec 2017 03:05:53 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;问题：在写路由时，通过跳转到同一路由改变id来改变数据，发现只有第一次的数据有用，其他的点击还是第一个路由进来的数据。&lt;/p&gt;
-&lt;p&gt;原因：在&lt;router-view&gt;&lt;/router-view&gt;外面加了一层&lt;keep-alive&gt;&lt;/keep-alive&gt;&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;&amp;lt;keep-alive&amp;gt;
-    &amp;lt;router-view&amp;gt;&amp;lt;/router-view&amp;gt;
-&amp;lt;/keep-alive&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>问题：在写路由时，通过跳转到同一路由改变id来改变数据，发现只有第一次的数据有用，其他的点击还是第一个路由进来的数据。</p><p>原因：在<router-view></router-view>外面加了一层<keep-alive></keep-alive></p><pre><code>&lt;keep-alive&gt;    &lt;router-view&gt;&lt;/router-view&gt;&lt;/keep-alive&gt;</code></pre><a id="more"></a><p>keep-alive 缓存组件在内存中，再次进入该页面不会重新渲染，用于保存页面的原始状态。<br>这就是原因！！！</p><p>解决方法有几种：</p><p>1.删除keep-alive</p><p>2.保留keep-alive，使用$watch()进行检测</p><p>3.保留keep-alive，使用beforeRouteUpdate进行检测</p><p>4.保留keep-alive，使用beforeRouteEnter 进行检测</p><pre><code>beforeRouteEnter (to, from, next) {  next(vm =&gt; {    vm.getdata()  })}</code></pre>]]></content:encoded>
-      
-      <comments>https://github.com/wubianluoye/2017/12/05/keep-alive%E4%BD%BF%E5%A4%8D%E7%94%A8%E5%AD%90%E7%BB%84%E4%BB%B6%E4%B8%8D%E5%88%B7%E6%96%B0/#disqus_thread</comments>
     </item>
     
   </channel>
