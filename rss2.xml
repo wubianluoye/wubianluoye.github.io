@@ -8,8 +8,50 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="%5Bobject%20Object%5D" rel="hub"/>
     <description></description>
-    <pubDate>Thu, 07 Dec 2017 07:01:22 GMT</pubDate>
+    <pubDate>Mon, 11 Dec 2017 08:49:09 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>vue项目在同一局域网无法打开解决方法</title>
+      <link>https://github.com/wubianluoye/2017/12/11/vue%E9%A1%B9%E7%9B%AE%E5%9C%A8%E5%90%8C%E4%B8%80%E5%B1%80%E5%9F%9F%E7%BD%91%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</link>
+      <guid>https://github.com/wubianluoye/2017/12/11/vue%E9%A1%B9%E7%9B%AE%E5%9C%A8%E5%90%8C%E4%B8%80%E5%B1%80%E5%9F%9F%E7%BD%91%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/</guid>
+      <pubDate>Mon, 11 Dec 2017 08:35:47 GMT</pubDate>
+      <description>
+      
+        &lt;p&gt;&lt;strong&gt;问题：&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;在使用vue-cli生成的vue文件想在手机上查看时，发现无法打开。（已将locahost：8080/替换成本机地址192.168.190.225：8080）&lt;/li&gt;
+&lt;li&gt;已将node.js从防火墙中打勾。&lt;br&gt;问题还是一样，手机上无法打开。&lt;/li&gt;
+&lt;/ol&gt;
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p><strong>问题：</strong></p><ol><li>在使用vue-cli生成的vue文件想在手机上查看时，发现无法打开。（已将locahost：8080/替换成本机地址192.168.190.225：8080）</li><li>已将node.js从防火墙中打勾。<br>问题还是一样，手机上无法打开。</li></ol><a id="more"></a><p><strong>解决方案：</strong></p><p>  <strong>找到vue项目的package.json文件</strong>，</p><p><strong>修改前</strong></p><pre><code>&quot;scripts&quot;: {    &quot;dev&quot;: &quot;webpack-dev-server --inline --progress --config build/webpack.dev.conf.js&quot;,    &quot;start&quot;: &quot;npm run dev&quot;,    &quot;unit&quot;: &quot;jest --config test/unit/jest.conf.js --coverage&quot;,    &quot;e2e&quot;: &quot;node test/e2e/runner.js&quot;,    &quot;test&quot;: &quot;npm run unit &amp;&amp; npm run e2e&quot;,    &quot;lint&quot;: &quot;eslint --ext .js,.vue src test/unit/specs test/e2e/specs&quot;,    &quot;build&quot;: &quot;node build/build.js&quot;  },</code></pre><p>在”dev”: “webpack-dev-server –inline –progress –config build/webpack.dev.conf.js”</p><p>中添加 –host 192.168.190.225（注192.168.190.225改为你的本机地址），保存即可。</p><p><strong>修改后</strong></p><pre><code>&quot;scripts&quot;: {    &quot;dev&quot;: &quot;webpack-dev-server --inline --progress --config build/webpack.dev.conf.js --host 192.168.190.225&quot;,    &quot;start&quot;: &quot;npm run dev&quot;,    &quot;unit&quot;: &quot;jest --config test/unit/jest.conf.js --coverage&quot;,    &quot;e2e&quot;: &quot;node test/e2e/runner.js&quot;,    &quot;test&quot;: &quot;npm run unit &amp;&amp; npm run e2e&quot;,    &quot;lint&quot;: &quot;eslint --ext .js,.vue src test/unit/specs test/e2e/specs&quot;,    &quot;build&quot;: &quot;node build/build.js&quot;  },</code></pre>]]></content:encoded>
+      
+      <comments>https://github.com/wubianluoye/2017/12/11/vue%E9%A1%B9%E7%9B%AE%E5%9C%A8%E5%90%8C%E4%B8%80%E5%B1%80%E5%9F%9F%E7%BD%91%E6%97%A0%E6%B3%95%E6%89%93%E5%BC%80%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95/#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>git删除远程分支</title>
+      <link>https://github.com/wubianluoye/2017/12/11/git%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/</link>
+      <guid>https://github.com/wubianluoye/2017/12/11/git%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/</guid>
+      <pubDate>Mon, 11 Dec 2017 08:31:29 GMT</pubDate>
+      <description>
+      
+        
+        
+          &lt;p&gt;git branch -a   查看远程分支有哪些&lt;/p&gt;
+&lt;p&gt;git checkout 分支名  切换到该分支&lt;/p&gt;
+&lt;p&gt;git push origin –delete &lt;branchname&gt;  删除远程分支 &lt;/branchname&gt;&lt;/p&gt;
+
+        
+      
+      </description>
+      
+      <content:encoded><![CDATA[<p>git branch -a   查看远程分支有哪些</p><p>git checkout 分支名  切换到该分支</p><p>git push origin –delete <branchname>  删除远程分支 </branchname></p>]]></content:encoded>
+      
+      <comments>https://github.com/wubianluoye/2017/12/11/git%E5%88%A0%E9%99%A4%E8%BF%9C%E7%A8%8B%E5%88%86%E6%94%AF/#disqus_thread</comments>
+    </item>
     
     <item>
       <title>vue项目中的跨域</title>
@@ -65,42 +107,6 @@
       <content:encoded><![CDATA[<p>react-router 有很多个版本，所以有很多个写法，在npm安装时，需要根据route的版本来找api，不然要被坑死！</p><p>react-router 4 版本<a href="https://reacttraining.cn/web/guides/quick-start" target="_blank" rel="noopener">https://reacttraining.cn/web/guides/quick-start</a></p><p> 这个不知道是几的版本<a href="https://react-guide.github.io/react-router-cn/，貌似安装后里面没有Link模块。demo报错" target="_blank" rel="noopener">https://react-guide.github.io/react-router-cn/，貌似安装后里面没有Link模块。demo报错</a></p>]]></content:encoded>
       
       <comments>https://github.com/wubianluoye/2017/12/05/react-router%E7%9A%84%E4%B8%80%E4%BA%9B%E9%97%AE%E9%A2%98/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>react的属性与状态</title>
-      <link>https://github.com/wubianluoye/2017/12/05/react%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%8A%B6%E6%80%81/</link>
-      <guid>https://github.com/wubianluoye/2017/12/05/react%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%8A%B6%E6%80%81/</guid>
-      <pubDate>Tue, 05 Dec 2017 03:44:14 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;&lt;code&gt;this.props&lt;/code&gt; 表示那些一旦定义，就不再改变的特性，而 &lt;code&gt;this.state&lt;/code&gt; 是会随着用户互动而产生变化的特性。&lt;/p&gt;
-&lt;p&gt;属性 props&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;this.props&lt;/code&gt;获取属性&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p><code>this.props</code> 表示那些一旦定义，就不再改变的特性，而 <code>this.state</code> 是会随着用户互动而产生变化的特性。</p><p>属性 props</p><p><code>this.props</code>获取属性</p><a id="more"></a><p>状态 state</p><p><code>this.stste</code>获取状态</p><p>属性是在一个组件被声明，尚未初始化的时候就被父组件赋予的，并且不可以自己修改</p><p>在react中，state属于组件的自有属性</p><p>getInitialState初始化每个实例特有的状态</p><p><code>setState({name:&quot;red&quot;})</code>来更新组件状态 </p><p>每次状态更新之后，react会对组件进行一个diff的算法，查看一下是否需要更新dom   如果需要更新dom，就会重新执行render方法</p><p>react数据传递使用两种事物进行传递：</p><p>1.属性（props）     在组件外部传入，或者内部设置，组件内部通过this.props获得</p><p>2.状态（state）     在组件内部设置或者更改，组件内部通过this.state获得</p><p>属性是在一个组件被声明，尚未初始化的时候就被父组件赋予的，并且不可以自己修改，就像咱们的姓氏是爸爸赋予的，爸爸可以改，但是你自己不能改</p><p>属性就是为了使用数据</p><p>如何让一个组件有属性 3种</p><p>1.在渲染的时候给它传递 2.父组件给子组件传入  3.组件自己初始化属性</p><p>属性被传递的方式一般是在组件被调用的时候被传入</p><p>可以通过在ReactDOM.render的时候去给组件传入一个提前设置好的数据，键值对方式</p><pre><code>var d=&apos;my component&apos;;var e={name:&quot;allen&quot;,age:18};var f=[0,1,2]ReactDOM.render(&lt;App title={d} info={e} arr={f}/&gt;,document.getElementById(&apos;app&apos;))</code></pre><p>获取的时候也很简单，创建组件里有一个东东叫<code>this.props</code></p><p>里面保存了所有传入的数据，使用时记得加{}  不加的话，react不认识</p><p>还有一种情况就是三个点   …</p><pre><code> var props={     name:&apos;allen&apos;,     age:18}&lt;Hello {...props}  sex={&apos;male&apos;}/&gt; </code></pre><p><code>this.props</code> 就是这样的<code>{name:&#39;allen&#39;,age:18,sex:&#39;male&#39;}</code></p><p>这是根据别人给传的，那么怎么能自己初始的时候就有呢，当然可以</p><pre><code>getDefaultProps:function(){     return {          name:&apos;tom&apos;     }},render:function(){}</code></pre><p>这个时候的数据也就会保存在this.props里，那么，会不会覆盖呢？</p><p>会的，在外面引入的数据会把自己自带的数据给替换掉</p><p>做个小例子吧，比如说现在要这么做，一个组件里呢，我要显示这样的东西，如果你有name属性，我就显示你的名字，没有就显示‘world’</p><p>三元表达式、  组件的方法返回值赋值变量去使用变量  、   直接调用这个方法    、     || 运算符</p><p><strong>demo：</strong></p><pre><code>var App=React.createClass({    getName:function(){        if(this.props.name){            return this.props.name;        }else{            return &apos;world&apos;    }},render:function(){    var name=this.getName();    return (        &lt;div&gt;            &lt;span&gt;Hello,{this.props.name?this.props.name:&apos;world&apos;}&lt;/span&gt;&lt;br/&gt;            &lt;span&gt;Hello,{name}&lt;/span&gt;&lt;br/&gt;            &lt;span&gt;Hello,{this.getName()}&lt;/span&gt;&lt;br/&gt;            &lt;span&gt;Hello,{this.props.name||&apos;name&apos;}&lt;/span&gt;&lt;br/&gt;            &lt;span&gt;Hello,            {(function(obj){                if(obj.props.name){                    return obj.props.name;                }else{                    return &apos;world&apos;                }            })(this)}            &lt;/span&gt;&lt;br/&gt;            &lt;/div&gt;            )        }    })    var props={name:&quot;allen&quot;,age:18};    ReactDOM.render(&lt;App {...props}/&gt;,document.getElementById(&apos;app&apos;))</code></pre><p>状态（state）在组件内部设置或者更改，组件内部通过this.state获得</p><p>state，就这个货  指的呢是事物所处的状况  为了让状态改变的时候，去改变结果</p><p>状态呢是由事物自行处理的，不断变化的</p><p>在react中，state属于组件的自有属性</p><p>getInitialState初始化每个实例特有的状态</p><p><code>setState({name:&quot;red&quot;})</code>来更新组件状态 </p><p>每次状态更新之后，react会对组件进行一个diff的算法，查看一下是否需要更新dom   如果需要更新dom，就会重新执行render方法</p><pre><code>var App1=React.createClass({    render:function(){        return (            &lt;div&gt;                &lt;h4 &gt;app1 {this.props.name}&lt;/h4&gt;            &lt;/div&gt;            )    }})    var App2=React.createClass({        getInitialState:function(){            return {                name:&apos;allen&apos;,                age:18            }        },    changeState:function(){        this.setState({name:&apos;tom&apos;})    },    inpChangeState:function(ev){        this.setState({name:ev.target.value})    },    render:function(){        return (            &lt;div&gt;                &lt;h2&gt;{this.state.name}&lt;/h2&gt;                &lt;h2&gt;{this.state.age}&lt;/h2&gt;                &lt;button onClick={this.changeState}&gt;change&lt;/button&gt;                &lt;input type=&quot;text&quot; onChange={this.inpChangeState}/&gt;                &lt;App1 {...this.state}/&gt;            &lt;/div&gt;        )    }    })ReactDOM.render(&lt;App2/&gt;,document.getElementById(&apos;app&apos;))</code></pre><p><strong>refs</strong> </p><p>可以dom结构上dom做标记</p><pre><code>this.refs.refname</code></pre><p>那么这两个东西，状态和属性都有什么相同点和不同点呢，来研究一下</p><p>相似点：都是纯js对象，都会触发render更新，都具有确定性（状态/属性相同，结果相同）</p><p>不同点：  </p><p>属性能从父组件获取，状态不能</p><p>属性可以由父组件修改，状态不能</p><p>属性能在内部设置默认值     ，状态也可以</p><p>属性不在组件内部修改   ，状态要改</p><p>属性能设置子组件初始值  ，状态不可以</p><p>属性可以修改子组件的值，状态不可以</p><p>状态只和自己相关，由自己维护</p><p>属性不要自己修改，可以从父组件获取，也可以给子组件设置</p><p>组件在运行时自己需要修改的数据其实就是状态而已</p><p><strong>设置属性值时使用双花括号</strong></p><p>由于 this.props 和 this.state 都用于描述组件的特性，可能会产生混淆。一个简单的区分方法是，this.props 表示那些一旦定义，就不再改变的特性，而 this.state 是会随着用户互动而产生变化的特性。</p><p>循环输出数据//</p><pre><code>var Tiezhu=React.createClass({    render:function(){        var arr=[1,2,3,4,5,6,7,8,9,10];        var aarry=[];        for(var i=0;i&lt;arr.length;i++){            aarry.push(&lt;h1&gt;{arr[i]}&lt;/h1&gt;)        }        return (            &lt;div&gt;                {aarry}            &lt;/div&gt;        )    }})ReactDOM.render(&lt;Tiezhu/&gt;,document.getElementById(&quot;app2&quot;));</code></pre><p>refs  </p><p>可以dom结构上dom做标记</p><pre><code>this.refs.refname</code></pre><p>相似点：都是纯js对象，都会触发render更新，都具有确定性（状态/属性相同，结果相同）</p><p>不同点：  属性能从父组件获取，状态不能<br>               属性可以由父组件修改，状态不能<br>               属性能在内部设置默认值     ，状态也可以<br>               属性不在组件内部修改   ，状态要改<br>               属性能设置子组件初始值  ，状态不可以<br>               属性可以修改子组件的值，状态不可以</p><p>状态只和自己相关，由自己维护<br>属性不要自己修改，可以从父组件获取，也可以给子组件设置</p><p>组件在运行时自己需要修改的数据其实就是状态而已</p>]]></content:encoded>
-      
-      <comments>https://github.com/wubianluoye/2017/12/05/react%E7%9A%84%E5%B1%9E%E6%80%A7%E4%B8%8E%E7%8A%B6%E6%80%81/#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>react组件间通信</title>
-      <link>https://github.com/wubianluoye/2017/12/05/react%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/</link>
-      <guid>https://github.com/wubianluoye/2017/12/05/react%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/</guid>
-      <pubDate>Tue, 05 Dec 2017 03:39:20 GMT</pubDate>
-      <description>
-      
-        &lt;p&gt;父组件可以给子组件传递属性，&lt;/p&gt;
-&lt;p&gt;父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状&lt;/p&gt;
-&lt;p&gt;态，不要这么做，会降低组件的内聚度，提高组件间的耦合度&lt;/p&gt;
-      
-      </description>
-      
-      <content:encoded><![CDATA[<p>父组件可以给子组件传递属性，</p><p>父组件可以调用子组件的方法 ref，因为ref可以形成一条链，所以父辈组件可以调用到任何子孙组件的方法，其实可以直接更改状</p><p>态，不要这么做，会降低组件的内聚度，提高组件间的耦合度</p><a id="more"></a><p>子组件可以调用父组件的方法，前提是父组件已经把方法传递给子组件了</p><p>这样的话，只要外层有至少一个共同的父组件，这两个组件就都可以通过共同的父组件进行通信</p><pre><code>React.addons.LinkedStateMixin         为 react提供的 双向绑定的react-with-addons.min.jsmixins:[React.addons.LinkedStateMixin]&lt;input type=&quot;text&quot; onClick={this.linkState(&apos;name&apos;)} style={{margin:"5px 0"}}/&gt;</code></pre><p>双向绑定。。<br>为单个数据挂载。。</p><pre><code>sexc:function(e){    this.setState({        sex:e.target.value    })}</code></pre><p>一个函数处理多个事件</p><pre><code>aal:function(type){    var that=this;    return function(e){        var obj={};        obj[type]=e.target.value;        that.setState(obj);    }}&lt;div&gt;&lt;input type=&quot;text&quot; onChange={this.aal(&apos;age&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}&lt;input type=&quot;text&quot; onChange={this.aal(&apos;name&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}&lt;input type=&quot;text&quot; onChange={this.aal(&apos;sex&apos;)} style={{margin:"5px 0"}} /&gt;{this.state.age}&lt;/div&gt;</code></pre>]]></content:encoded>
-      
-      <comments>https://github.com/wubianluoye/2017/12/05/react%E7%BB%84%E4%BB%B6%E9%97%B4%E9%80%9A%E4%BF%A1/#disqus_thread</comments>
     </item>
     
   </channel>
