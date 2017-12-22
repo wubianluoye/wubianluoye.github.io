@@ -71,7 +71,7 @@ github地址：[仿豆瓣-demo](https://github.com/wubianluoye/douban-test)
 - 上拉加载更多完成！
 - 在npm run bulid 之后，发现样式错乱了，然后把所有的文件都加上了scoped,就正常了。
 - 使用了视图路由，通过该方法，实现了点击进入搜索页面后，导航条不显示。
-- 对比了router.go（）和router.back()的区别。
+- 对比了router.go()和router.back()的区别。
 
 **app.vue**
 
