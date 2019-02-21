@@ -7,7 +7,7 @@ tags: TypeScript
 
     TypeScript 是 JavaScript 的一个超集，主要提供了类型系统和对 ES6 的支持，它由 Microsoft 开发，代码开源于 GitHub 上。
 
-    <!-- more -->
+
 
   其次引用官网的定义：
 
@@ -18,7 +18,7 @@ tags: TypeScript
     TypeScript 是 JavaScript 的类型的超集，它可以编译成纯 JavaScript。编译出来的 JavaScript 可以运行在任何浏览器上。TypeScript 编译工具可以运行在任何服务器和任何系统上。TypeScript 是开源的。
 
   **为什么选择 TypeScript**
-
+<!-- more -->
     TypeScript 官网列举了一些优势，不过我更愿意自己总结一下：
 
     TypeScript 增加了代码的可读性和可维护性
