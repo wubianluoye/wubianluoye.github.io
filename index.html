@@ -149,6 +149,97 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-JavaScript异步、事件循环与消息队列、微任务与宏任务" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/01/11/JavaScript异步、事件循环与消息队列、微任务与宏任务/">JavaScript异步、事件循环与消息队列、微任务与宏任务</a>
+    </h1>
+  
+
+        
+        <a href="/2020/01/11/JavaScript异步、事件循环与消息队列、微任务与宏任务/" class="archive-article-date">
+  	<time datetime="2020-01-11T02:00:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>(<code>`</code>)</p>
+<p>  setTimeout(()=&gt;{<br>    console.log(1) // 8<br>  },0)</p>
+<p>  console.log(2)  // 1</p>
+<p>  new Promise((resolve, reject) =&gt; {<br>    console.log(3) // 2<br>    resolve()<br>    console.log(4) // 3<br>  }).then(res=&gt; {<br>    console.log(5) // 5<br>    return new Promise((resolve,rej) =&gt; {<br>      resolve()<br>    })<br>  }).then(res =&gt; {<br>    console.log(6) // 7<br>  })</p>
+<p>  console.log(7) // 4</p>
+<p>  setTimeout(()=&gt;{<br>    new Promise((r, j) =&gt; {<br>      console.log(11) // 9<br>      r()<br>    }).then(res =&gt; {<br>      console.log(8) // 11<br>    })<br>    console.log(9) // 10<br>  },0)</p>
+<p>  new Promise((r,j)=&gt; {<br>    r()<br>  }).then(res=&gt; {<br>    console.log(10) // 6<br>  })</p>
+<p>(<code>`</code>)</p>
+<blockquote>
+<blockquote>
+<p>1.执行一个宏任务（栈中没有就从事件队列中获取）<br>2.执行过程中如果遇到微任务，就将它添加到微任务的任务队列中<br>3.宏任务执行完毕后，立即执行当前微任务队列中的所有微任务（依次执行）<br>4.当前宏任务执行完毕，开始检查渲染，然后GUI线程接管渲染<br>5.渲染完毕后，JS引擎线程继续，开始下一个宏任务（从宏任务队列中获取）</p>
+</blockquote>
+</blockquote>
+<hr>
+<p>  这篇总结的很好：</p>
+<blockquote>
+<p><a href="https://juejin.im/post/5be5a0b96fb9a049d518febc" target="_blank" rel="noopener">掘金:总结：JavaScript异步、事件循环与消息队列、微任务与宏任务</a></p>
+</blockquote>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">ES6</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/01/11/JavaScript异步、事件循环与消息队列、微任务与宏任务/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-cordova打包应用问题" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -868,91 +959,6 @@
 
 
   
-    <article id="post-vue项目在同一局域网无法打开解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/11/vue项目在同一局域网无法打开解决方法/">vue项目在同一局域网无法打开解决方法</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/11/vue项目在同一局域网无法打开解决方法/" class="archive-article-date">
-  	<time datetime="2017-12-11T08:35:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-11</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>问题：</strong></p>
-<ol>
-<li>在使用vue-cli生成的vue文件想在手机上查看时，发现无法打开。（已将locahost：8080/替换成本机地址192.168.190.225：8080）</li>
-<li>已将node.js从防火墙中打勾。问题还是一样，手机上无法打开。</li>
-<li>vue-cli 的 webpack 模板在11月12日 的1.2.0版本引入了wepack-dev-server，而vue-cli没此创建项目，默认会创建最新的 webpack模板，所以应该从11月12日之后，通过vue-cli创建的webpack模板都有这个问题。</li>
-</ol>
-        
-          <a class="article-more-a" href="/2017/12/11/vue项目在同一局域网无法打开解决方法/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/11/vue项目在同一局域网无法打开解决方法/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1046,7 +1052,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">Iscroll</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">vue</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">chrome</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1062,15 +1080,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">vue</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">React</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1078,11 +1088,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
+                <a href="javascript:void(0)" class="js-tag color5">test</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">VR</a>
+                <a href="javascript:void(0)" class="js-tag color3">webpack</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1094,15 +1104,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信开发</a>
+                <a href="javascript:void(0)" class="js-tag color3">VR</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1110,7 +1112,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">hexo</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">正则</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">微信开发</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1119,10 +1129,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">上传</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">chrome</a>
               </li>
              
               <li class="article-tag-list-item">
