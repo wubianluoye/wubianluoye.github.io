@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
   <title>JavaScript异步、事件循环与消息队列、微任务与宏任务 | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="(`)   setTimeout(()=&amp;gt;{    console.log(1) // 8  },0)   console.log(2)  // 1   new Promise((resolve, reject) =&amp;gt; {    console.log(3) // 2    resolve()    console.log(4) // 3  }).then(res=&amp;gt; {">
+  <meta name="description" content="setTimeout(()=&amp;gt;{    console.log(1) // 8  },0)   console.log(2)  // 1   new Promise((resolve, reject) =&amp;gt; {    console.log(3) // 2    resolve()    console.log(4) // 3  }).then(res=&amp;gt; {    cons">
 <meta name="keywords" content="ES6">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript异步、事件循环与消息队列、微任务与宏任务">
 <meta property="og:url" content="https://github.com/wubianluoye/2020/01/11/JavaScript异步、事件循环与消息队列、微任务与宏任务/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="(`)   setTimeout(()=&amp;gt;{    console.log(1) // 8  },0)   console.log(2)  // 1   new Promise((resolve, reject) =&amp;gt; {    console.log(3) // 2    resolve()    console.log(4) // 3  }).then(res=&amp;gt; {">
+<meta property="og:description" content="setTimeout(()=&amp;gt;{    console.log(1) // 8  },0)   console.log(2)  // 1   new Promise((resolve, reject) =&amp;gt; {    console.log(3) // 2    resolve()    console.log(4) // 3  }).then(res=&amp;gt; {    cons">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-01-11T01:55:37.746Z">
+<meta property="og:updated_time" content="2020-01-11T02:00:16.433Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript异步、事件循环与消息队列、微任务与宏任务">
-<meta name="twitter:description" content="(`)   setTimeout(()=&amp;gt;{    console.log(1) // 8  },0)   console.log(2)  // 1   new Promise((resolve, reject) =&amp;gt; {    console.log(3) // 2    resolve()    console.log(4) // 3  }).then(res=&amp;gt; {">
+<meta name="twitter:description" content="setTimeout(()=&amp;gt;{    console.log(1) // 8  },0)   console.log(2)  // 1   new Promise((resolve, reject) =&amp;gt; {    console.log(3) // 2    resolve()    console.log(4) // 3  }).then(res=&amp;gt; {    cons">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -171,14 +171,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>(<code>`</code>)</p>
-<p>  setTimeout(()=&gt;{<br>    console.log(1) // 8<br>  },0)</p>
+        <p>  setTimeout(()=&gt;{<br>    console.log(1) // 8<br>  },0)</p>
 <p>  console.log(2)  // 1</p>
 <p>  new Promise((resolve, reject) =&gt; {<br>    console.log(3) // 2<br>    resolve()<br>    console.log(4) // 3<br>  }).then(res=&gt; {<br>    console.log(5) // 5<br>    return new Promise((resolve,rej) =&gt; {<br>      resolve()<br>    })<br>  }).then(res =&gt; {<br>    console.log(6) // 7<br>  })</p>
+<a id="more"></a>
 <p>  console.log(7) // 4</p>
 <p>  setTimeout(()=&gt;{<br>    new Promise((r, j) =&gt; {<br>      console.log(11) // 9<br>      r()<br>    }).then(res =&gt; {<br>      console.log(8) // 11<br>    })<br>    console.log(9) // 10<br>  },0)</p>
 <p>  new Promise((r,j)=&gt; {<br>    r()<br>  }).then(res=&gt; {<br>    console.log(10) // 6<br>  })</p>
-<p>(<code>`</code>)</p>
 <blockquote>
 <blockquote>
 <p>1.执行一个宏任务（栈中没有就从事件队列中获取）<br>2.执行过程中如果遇到微任务，就将它添加到微任务的任务队列中<br>3.宏任务执行完毕后，立即执行当前微任务队列中的所有微任务（依次执行）<br>4.当前宏任务执行完毕，开始检查渲染，然后GUI线程接管渲染<br>5.渲染完毕后，JS引擎线程继续，开始下一个宏任务（从宏任务队列中获取）</p>
@@ -345,19 +344,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">Iscroll</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">vue</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">chrome</a>
+                <a href="javascript:void(0)" class="js-tag color3">Iscroll</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -373,11 +364,15 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">React</a>
+                <a href="javascript:void(0)" class="js-tag color4">ES6</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+                <a href="javascript:void(0)" class="js-tag color2">chrome</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">React</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -389,6 +384,14 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">跨域</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">VR</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">safari</a>
               </li>
              
@@ -397,11 +400,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">VR</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
+                <a href="javascript:void(0)" class="js-tag color3">正则</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -409,11 +408,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">正则</a>
+                <a href="javascript:void(0)" class="js-tag color5">微信开发</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">微信开发</a>
+                <a href="javascript:void(0)" class="js-tag color4">移动端</a>
               </li>
              
               <li class="article-tag-list-item">
