@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>Archives: 2017/12 | wubianluoye</title>
+  <title>Pormise与Async/Await | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5,vue,vuex,开发者,编程,代码,Developer,Coder,html,css,css3,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wubianluoye">
-<meta property="og:url" content="https://github.com/wubianluoye/archives/2017/12/page/2/index.html">
+  <meta name="description" content="#### SECTION 1  promise // 1.通过新建一个promise来进行异步，将等待上一个then执行完才会继续执行下一个then。执行时长为所有then的总和。(5000+2000 = 7000毫秒) // 2.若new Promise()返还的时reject时，直接执行catch">
+<meta name="keywords" content="ES6">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Pormise与Async&#x2F;Await">
+<meta property="og:url" content="https://github.com/wubianluoye/2020/01/11/Promise和Async、Await/index.html">
 <meta property="og:site_name" content="wubianluoye">
+<meta property="og:description" content="#### SECTION 1  promise // 1.通过新建一个promise来进行异步，将等待上一个then执行完才会继续执行下一个then。执行时长为所有then的总和。(5000+2000 = 7000毫秒) // 2.若new Promise()返还的时reject时，直接执行catch">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-01-11T02:19:16.651Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wubianluoye">
+<meta name="twitter:title" content="Pormise与Async&#x2F;Await">
+<meta name="twitter:description" content="#### SECTION 1  promise // 1.通过新建一个promise来进行异步，将等待上一个then执行完才会继续执行下一个then。执行时长为所有then的总和。(5000+2000 = 7000毫秒) // 2.若new Promise()返还的时reject时，直接执行catch">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -147,188 +151,56 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Promise和Async、Await" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Pormise与Async/Await
+    </h1>
+  
+
+        
+        <a href="/2020/01/11/Promise和Async、Await/" class="archive-article-date">
+  	<time datetime="2020-01-11T02:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-01-11</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>#### SECTION 1  promise
+// 1.通过新建一个promise来进行异步，将等待上一个then执行完才会继续执行下一个then。执行时长为所有then的总和。(5000+2000 = 7000毫秒)
+// 2.若new Promise()返还的时reject时，直接执行catch
+</code></pre><a id="more"></a>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">let myPormise = new Promise((resolve,reject) =&gt; &#123;</span><br><span class="line">	let start = new Date().getTime()</span><br><span class="line">	let obj = &#123;</span><br><span class="line">		result: 10,</span><br><span class="line">		start: start</span><br><span class="line">	&#125;</span><br><span class="line">	setTimeout(() =&gt; &#123; resolve(obj) &#125;, 5000)</span><br><span class="line">	//reject(&apos;error&apos;) 错误只能在刚开始时返回？？？</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">myPormise.then((res,s) =&gt; &#123;</span><br><span class="line">	return new Promise((r,j) =&gt; &#123;</span><br><span class="line">		res.result = 20 + res.result</span><br><span class="line">		setTimeout(() =&gt; &#123; r(res) &#125;, 2000)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;).then(res =&gt; &#123;</span><br><span class="line">	let end = new Date().getTime()</span><br><span class="line">	console.log(res.result)</span><br><span class="line">	console.log(&apos;1,times &apos;+ (end - res.start) / 1000 + &apos;s!&apos;)</span><br><span class="line">&#125;).catch(err =&gt; &#123;</span><br><span class="line">	console.log(&apos;errortest&apos;, err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
+<pre><code>#### SECTION 2  promise并发
+// 1.可以通过promise.all()方法来进行并发操作，用时则为当前最大延时(3000毫秒)
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function f1(r) &#123;</span><br><span class="line">	return new Promise((res, rej) =&gt; &#123;</span><br><span class="line">		setTimeout(() =&gt; &#123; res(r) &#125;, 2000)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f2(r) &#123;</span><br><span class="line">	return new Promise((res, rej) =&gt; &#123;</span><br><span class="line">		setTimeout(() =&gt; &#123; res(r) &#125;, 1000)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function f3(r) &#123;</span><br><span class="line">	return new Promise((res, rej) =&gt; &#123;</span><br><span class="line">		setTimeout(() =&gt; &#123; res(r) &#125;, 3000)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function alldone() &#123;</span><br><span class="line">	let start = new Date().getTime()</span><br><span class="line">	Promise.all([f1(100), f2(200), f3(300)]).then(res =&gt; &#123;</span><br><span class="line">		console.log(res.reduce((cur, pre) =&gt; cur + pre, 0))</span><br><span class="line">		let end = new Date().getTime()</span><br><span class="line">		console.log(&apos;2,done, times: &apos;+ (end - start) / 1000+ &apos;s&apos;)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line">alldone()</span><br></pre></td></tr></table></figure>
+</code></pre><hr>
+<pre><code>#### SECTION 3  async/await
+// 用时为(2000+4000 毫秒)
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">function syncfun(r) &#123;</span><br><span class="line">	return new Promise((resolve, reject) =&gt; &#123;</span><br><span class="line">		setTimeout(() =&gt; &#123; resolve(r) &#125;, 2000)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function syf(r) &#123;</span><br><span class="line">	return new Promise((res, rej) =&gt; &#123;</span><br><span class="line">		setTimeout(() =&gt; &#123; res(r) &#125;, 4000)</span><br><span class="line">	&#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">async function resut () &#123;</span><br><span class="line">	try&#123;</span><br><span class="line">		let start = new Date().getTime()</span><br><span class="line">		let a = await syncfun(100)</span><br><span class="line">		let b = await syf(200)</span><br><span class="line">		let end = new Date().getTime()</span><br><span class="line">		console.log(a + b)</span><br><span class="line">		console.log(&apos;3,use times: &apos;+(end - start) / 1000 + &apos; seconds&apos;)</span><br><span class="line">	&#125; catch(e) &#123;</span><br><span class="line">		console.log(e)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">resut()</span><br></pre></td></tr></table></figure>
+<hr>
+<pre><code>#### SECTION 4  async/await+promise.all 并发
+// 用时为最大延时(4000毫秒)
+</code></pre><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">async function bresult() &#123;</span><br><span class="line">	let start = new Date().getTime()</span><br><span class="line">	let [a, b] = await Promise.all([syncfun(100), syf(200)])</span><br><span class="line">	let end = new Date().getTime()</span><br><span class="line">	console.log(a + b)</span><br><span class="line">	console.log(&apos;4,use times: &apos;+(end - start) / 1000 + &apos; seconds&apos;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bresult()</span><br></pre></td></tr></table></figure>
+<p>// promise 7.002s  // 依次<br>// pormise.all 3.004s  // 并发<br>// async/await  6.004s  // 依次<br>// async/await + promise.all  4.004s  // 并发</p>
+<hr>
+<p>// 推荐文章：</p>
+<p><a href="https://segmentfault.com/a/1190000011526612" target="_blank" rel="noopener">掘金：ES6系列文章 异步神器async-await</a></p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/常用正则表达式/" class="archive-article-date">
-  	<time datetime="2017-12-05T03:00:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/常用正则表达式/">常用正则表达式</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">正则</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/全景图demo/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:57:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/全景图demo/">全景图demo</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">VR</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/git到远程服务器/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:53:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/git到远程服务器/">git到远程服务器</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/git-删除远程端文件或文件夹/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:52:09.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/git-删除远程端文件或文件夹/">git 删除远程端文件或文件夹</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">git</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/关于箭头函数需要注意的地方/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:49:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/关于箭头函数需要注意的地方/">关于箭头函数需要注意的地方</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -340,212 +212,54 @@
 		</ul>
 	</div>
 
-          
+      
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/css头尾固定，中间滚动布局/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:47:31.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/01/11/js异步、事件循环与消息队列、微任务与宏任务/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Js异步、事件循环与消息队列、微任务与宏任务</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/css头尾固定，中间滚动布局/">css头尾固定，中间滚动布局</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/单行文本溢出与多行文本溢出/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:43:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/单行文本溢出与多行文本溢出/">单行文本溢出与多行文本溢出</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/选项按钮美化label/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:42:05.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/选项按钮美化label/">选项按钮美化label</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">css</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/IScroll5-使用指南/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:34:37.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/IScroll5-使用指南/">IScroll5 使用指南</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">Iscroll</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/12/05/移动端自适应rem/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:20:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/12/05/移动端自适应rem/">移动端自适应rem</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2017/12/">&laquo; Prev</a><a class="page-number" href="/archives/2017/12/">1</a><span class="page-number current">2</span><a class="page-number" href="/archives/2017/12/page/3/">3</a><a class="extend next" rel="next" href="/archives/2017/12/page/3/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -569,8 +283,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
