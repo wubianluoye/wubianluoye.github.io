@@ -149,6 +149,87 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-移动端将手机输入法中的完成变成搜索功能实现" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/03/20/移动端将手机输入法中的完成变成搜索功能实现/">移动端将手机输入法中的完成变成搜索功能实现</a>
+    </h1>
+  
+
+        
+        <a href="/2020/03/20/移动端将手机输入法中的完成变成搜索功能实现/" class="archive-article-date">
+  	<time datetime="2020-03-20T12:10:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>当我们的移动端想实现如淘宝搜索时，虚拟键盘有个搜索按钮时。</p>
+<p><code>原生版</code></p>
+<p>—-  html  —–</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">		&lt;form id=&quot;myform&quot; action=&quot;javascript:;&quot;&gt;</span><br><span class="line">			&lt;input type=&quot;search&quot; id=&quot;search&quot;&gt;</span><br><span class="line">		&lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">----  js  -------</span><br><span class="line"></span><br><span class="line">&lt;!-- more --&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">		document.getElementById(&apos;search&apos;).onkeyup = function(event) &#123;</span><br><span class="line">			if(event.keyCode === 13) &#123;</span><br><span class="line">				document.getElementById(&apos;search&apos;).blur();</span><br><span class="line">				// doth</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br></pre></td></tr></table></figure>
+<p><code>vue版</code></p>
+<p>—-  html  —–</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">	&lt;form action=&quot;javascript:;&quot;&gt;</span><br><span class="line">		&lt;input v-model=&quot;value&quot; @keyup.enter=&quot;search&quot; ref=&quot;search&quot;&gt;</span><br><span class="line">	&lt;/form&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">----  js  -------</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"> 	methods: &#123;</span><br><span class="line"> 		search() &#123;</span><br><span class="line"> 			this.$refs.search.blur()</span><br><span class="line"> 		&#125;</span><br><span class="line"> 	&#125;</span><br></pre></td></tr></table></figure>
+<p>首先，需要一个form表单包住我们的搜索框，并禁止表单提交；<br>然后，将input的type设置为search。 然后会发现点击搜索后，虚拟键盘不会自动收回;<br>所以，还需要添加一个点击了搜索按钮后，关闭虚拟按键。也就是让input失去焦点。</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/03/20/移动端将手机输入法中的完成变成搜索功能实现/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-vue项目在同一局域网无法打开解决方法" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -832,89 +913,6 @@
       
         <p class="article-more-link">
           <a class="article-more-a" href="/2018/01/25/移动端常用UA/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Vue同级级别组件之间传递参数" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2018/01/02/Vue同级级别组件之间传递参数/">Vue同级级别组件之间传递参数</a>
-    </h1>
-  
-
-        
-        <a href="/2018/01/02/Vue同级级别组件之间传递参数/" class="archive-article-date">
-  	<time datetime="2018-01-02T09:12:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <pre><code>&lt;!DOCTYPE html&gt;
-&lt;html lang=&quot;en&quot;&gt;
-&lt;head&gt;
-    &lt;meta charset=&quot;UTF-8&quot;&gt;
-    &lt;title&gt;Title&lt;/title&gt;
-    &lt;script src=&quot;js/vue.js&quot;&gt;&lt;/script&gt;
-&lt;/head&gt;
-</code></pre>
-        
-          <a class="article-more-a" href="/2018/01/02/Vue同级级别组件之间传递参数/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">vue</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2018/01/02/Vue同级级别组件之间传递参数/">展开全文 >></a>
         </p>
       
 
