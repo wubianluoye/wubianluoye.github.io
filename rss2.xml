@@ -8,14 +8,14 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     <atom:link href="%5Bobject%20Object%5D" rel="hub"/>
     <description></description>
-    <pubDate>Fri, 20 Mar 2020 12:25:01 GMT</pubDate>
+    <pubDate>Fri, 20 Mar 2020 12:29:08 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
       <title>移动端将手机输入法中的完成变成搜索功能实现</title>
       <link>https://github.com/wubianluoye/2020/03/20/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B0%86%E6%89%8B%E6%9C%BA%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%AD%E7%9A%84%E5%AE%8C%E6%88%90%E5%8F%98%E6%88%90%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</link>
       <guid>https://github.com/wubianluoye/2020/03/20/%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%B0%86%E6%89%8B%E6%9C%BA%E8%BE%93%E5%85%A5%E6%B3%95%E4%B8%AD%E7%9A%84%E5%AE%8C%E6%88%90%E5%8F%98%E6%88%90%E6%90%9C%E7%B4%A2%E5%8A%9F%E8%83%BD%E5%AE%9E%E7%8E%B0/</guid>
-      <pubDate>Fri, 20 Mar 2020 12:10:57 GMT</pubDate>
+      <pubDate>Fri, 20 Mar 2020 12:11:57 GMT</pubDate>
       <description>
       
         &lt;p&gt;当我们的移动端想实现如淘宝搜索页面，虚拟键盘有个搜索按钮时。&lt;/p&gt;
