@@ -6,16 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>wubianluoye</title>
+  <title>express摸文档之路 | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="keywords" content="前端,js,jquery,javascript,html5,vue,vuex,开发者,编程,代码,Developer,Coder,html,css,css3,">
-<meta property="og:type" content="website">
-<meta property="og:title" content="wubianluoye">
-<meta property="og:url" content="https://github.com/wubianluoye/page/4/index.html">
+  <meta name="description" content="** 一、静态目录设置  nodejs中没有像apache等的提供静态文件夹，需要自己设置。 静态文件夹也可以设置多个，只需要app.use()多个即可。  1234567const express = require(&amp;apos;epxress&amp;apos;)const app = express()app.use(&amp;apos;/static&amp;apos;,express.static(__dirn">
+<meta name="keywords" content="nodejs">
+<meta property="og:type" content="article">
+<meta property="og:title" content="express摸文档之路">
+<meta property="og:url" content="https://github.com/wubianluoye/2020/03/28/express/index.html">
 <meta property="og:site_name" content="wubianluoye">
+<meta property="og:description" content="** 一、静态目录设置  nodejs中没有像apache等的提供静态文件夹，需要自己设置。 静态文件夹也可以设置多个，只需要app.use()多个即可。  1234567const express = require(&amp;apos;epxress&amp;apos;)const app = express()app.use(&amp;apos;/static&amp;apos;,express.static(__dirn">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2020-04-11T09:02:42.269Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="wubianluoye">
+<meta name="twitter:title" content="express摸文档之路">
+<meta name="twitter:description" content="** 一、静态目录设置  nodejs中没有像apache等的提供静态文件夹，需要自己设置。 静态文件夹也可以设置多个，只需要app.use()多个即可。  1234567const express = require(&amp;apos;epxress&amp;apos;)const app = express()app.use(&amp;apos;/static&amp;apos;,express.static(__dirn">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -147,271 +151,75 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-虚拟键盘监听兼容" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-express" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/05/虚拟键盘监听兼容/">虚拟键盘监听兼容</a>
+    <h1 class="article-title" itemprop="name">
+      express摸文档之路
     </h1>
   
 
         
-        <a href="/2017/12/05/虚拟键盘监听兼容/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:16:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
+        <a href="/2020/03/28/express/" class="archive-article-date">
+  	<time datetime="2020-03-28T09:20:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-28</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <pre><code>$(&quot;#name&quot;).on(&apos;input porpertychange&apos;,function(){
-    var thisTxt=$(&quot;#name&quot;).val();
-    $(this).siblings(&quot;p&quot;).html(thisTxt)
-})
-</code></pre>
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/05/虚拟键盘监听兼容/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-微信二次开发-从环境配置到开发" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/05/微信二次开发-从环境配置到开发/">微信二次开发-从环境配置到开发</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/05/微信二次开发-从环境配置到开发/" class="archive-article-date">
-  	<time datetime="2017-12-05T02:05:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1、开始</p>
-<p><img src="https://i.imgur.com/TuQPEoC.png" alt></p>
-        
-          <a class="article-more-a" href="/2017/12/05/微信二次开发-从环境配置到开发/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">微信开发</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/05/微信二次开发-从环境配置到开发/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-关于splice和slice" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/05/关于splice和slice/">关于splice和slice</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/05/关于splice和slice/" class="archive-article-date">
-  	<time datetime="2017-12-05T01:42:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><strong>splice()</strong></p>
-<p>splice() 方法向/从数组中添加/删除项目，然后返回被删除的项目。</p>
-<p>splice() 方法可删除从 index 处开始的零个或多个元素，并且用参数列表中声明的一个或多个值来替换那些被删除的元素。</p>
-<p>如果从 arrayObject 中删除了元素，则返回的是含有被删除的元素的数组。</p>
-        
-          <a class="article-more-a" href="/2017/12/05/关于splice和slice/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">JavaScript</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/05/关于splice和slice/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-chrome插件开发api文档" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/05/chrome插件开发api文档/">chrome插件开发api文档</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/05/chrome插件开发api文档/" class="archive-article-date">
-  	<time datetime="2017-12-05T01:36:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p><a href="https://link.juejin.im/?target=http%3A%2F%2Fopen.chrome.360.cn%2Fextension_dev%2Foverview.html" target="_blank" rel="noopener">360–扩展开发文档</a></p>
+        <p><em>**</em> 一、静态目录设置</p>
+<ol>
+<li>nodejs中没有像apache等的提供静态文件夹，需要自己设置。</li>
+<li>静态文件夹也可以设置多个，只需要app.use()多个即可。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;epxress&apos;)</span><br><span class="line">const app = express()</span><br><span class="line">app.use(&apos;/static&apos;,express.static(__dirname+&apos;/public&apos;))</span><br><span class="line"></span><br><span class="line">// &apos;/static&apos; 则localhose:3000/static访问到静态文件夹位置</span><br><span class="line">// 也可以不写，则默认访问根目录时，都能访问到静态文件夹位置</span><br><span class="line">// static(__dirname+&apos;/public&apos;)) // &apos;/public&apos;为本地的需要作为静态文件夹的目录</span><br></pre></td></tr></table></figure>
+<p>*** 二、req属性</p>
+<ol>
+<li><p>当req是 <em>post</em> 请求时，获取参数需要用到插件<code>body-parser</code></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install body-parser</span><br><span class="line"></span><br><span class="line">const bodyParser = require(&apos;body-parser&apos;)</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">app.use(bodyParser.urlencoded(&#123;extended: false&#125;))</span><br><span class="line">app.use(bodyParser.json())</span><br><span class="line"></span><br><span class="line">app.post(&apos;/home&apos;, (req, res) =&gt; &#123;</span><br><span class="line">	console.log(req.body) // 获取到传回来的参数（json格式）</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a href="https://link.juejin.im/?target=https%3A%2F%2Fchajian.baidu.com%2Fdeveloper%2Fextensions%2Fapi_index.html" target="_blank" rel="noopener">JavaScript API -百度浏览器应用开发文档</a></p>
+<li><p>req.hostname 从请求头获取主机</p>
 </li>
-<li><p><a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.ituring.com.cn%2Fbook%2F1421" target="_blank" rel="noopener">Chrome扩展及应用开发（首发版）</a></p>
+<li><p>req.query,当请求如’localhost:3000/user?id=9&amp;name=xiaoming’时，可以通过req.query获取到参数，并且自动转为json格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	id: 9,</span><br><span class="line">	name: &apos;xiaoming&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a href="https://link.juejin.im/?target=http%3A%2F%2Fwww.cnblogs.com%2Fchampagne%2Ftag%2FGoogle%2520Chrome%25E6%2589%25A9%25E5%25B1%2595%2F" target="_blank" rel="noopener">Chrome扩展开发极客</a></p>
+<li><p>req.params,当请求如’localhost:3000/user/9’时，可以通过req.params获取到参数，并且自动转为json格式。<br>也可以获取多个参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">// 单个参数时 localhost:3000/user/9</span><br><span class="line">// 对应app.post(&apos;/user/:id&apos;)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	id: 9</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 多个参数时 localhost:3000/user/9/abc</span><br><span class="line">// 对应app.post(&apos;/user/:id/:name&apos;)</span><br><span class="line"></span><br><span class="line">&#123;</span><br><span class="line">	id: 9,</span><br><span class="line">	name: &apos;abc&apos;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
+<li><p>req.path 获取请求URL</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// example.com/users?sort=desc</span><br><span class="line">console.log(req.path)</span><br><span class="line">// =&gt; &apos;/users&apos;</span><br></pre></td></tr></table></figure>
+<ol start="6">
+<li>req.route 获取当前路由的路由信息</li>
+</ol>
+<p>*** 三、res属性</p>
+<ol>
+<li><p>res.append, 可以用来设置响应头参数 <code>res.append(field [, value])</code><br><code>res.append(&#39;Set-Cookie&#39;, &#39;foo=bar; Path=/; HttpOnly&#39;)</code></p>
+</li>
+<li><p>res.cookie, 设置响应头cookie参数 <code>res.cookie(name, value [, options])</code><br><code>res.cookie(&#39;name&#39;, &#39;tobi&#39;, { domain: &#39;.example.com&#39;, path: &#39;/admin&#39;, secure: true })</code></p>
+</li>
+</ol>
+<p>3.res.json(obj),可以将数据以json格式返回，但也得传的是json格式</p>
+<ol start="4">
+<li>res.render(), 可以渲染一个文件到浏览器 <code>res.render(view [, locals] [, callback])</code></li>
+<li>res.download(file) 访问时，浏览器自动下载文件</li>
+<li>res.type 设置mime类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.type(&apos;.html&apos;)</span><br><span class="line">// =&gt; &apos;text/html&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>*** 三、router</p>
+<ol>
+<li><p>通过<code>const router = express.Router()</code>来获取router，再通过router.get或router.post等方式设置路由路径。<br>它可以接收3个参数(req,res,next),其中，前2两个与上面一样，next可以用来处理一些其他状态，<br>但是需要注意的是，若参数中有加next，那么在最后必须加上next(),不然路由无法继续。<br>一般用来做中间件过滤器。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// index.js</span><br><span class="line"></span><br><span class="line">router.get(&apos;/name&apos;, (req, res, next) =&gt; &#123;</span><br><span class="line">	console.log(req.path)</span><br><span class="line">	res.send(&apos;user: &apos;+req.params.id)</span><br><span class="line">	// do things</span><br><span class="line">	next()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引用router时，通过app.use(require(‘/router/index.js’))<br>这时，访问localhost:3000/name时，路由会自定去找到index.js中的/name路径。</p>
+</li>
+</ol>
+<p>也可写成这样app.use(‘/user’,require(‘/router/index.js’))<br>那么就需要访问localhost:3000/user/name才能定位到它了。</p>
 
       
 
@@ -425,7 +233,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">chrome</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">nodejs</a>
         		</li>
       		
 		</ul>
@@ -434,16 +242,24 @@
       
 
       
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/05/chrome插件开发api文档/">展开全文 >></a>
-        </p>
-      
 
       
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/20/vue项目在同一局域网无法打开解决方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">vue项目在同一局域网移动端无法打开解决方法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -463,321 +279,14 @@
 
 
 
-
-  
-    <article id="post-webpack3-0躺坑css处理与es6编译" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/12/01/webpack3-0躺坑css处理与es6编译/">webpack3.0躺坑css处理与es6编译</a>
-    </h1>
-  
-
-        
-        <a href="/2017/12/01/webpack3-0躺坑css处理与es6编译/" class="archive-article-date">
-  	<time datetime="2017-12-01T07:30:34.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-12-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Webpack3.0小案例躺坑css处理与ES6编译</p>
-<p>css的编译与加载，基于style-loader、css-loader、postcss-loader、autoprefixer以及css预处理(以less为例)。<br>ES6的编译与加载，babel-preset-env代替babel-preset-2015。<br>
-        
-          <a class="article-more-a" href="/2017/12/01/webpack3-0躺坑css处理与es6编译/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">webpack</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/12/01/webpack3-0躺坑css处理与es6编译/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-换电脑怎么更新博客？" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/30/换电脑怎么更新博客？/">换电脑怎么更新博客？</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/30/换电脑怎么更新博客？/" class="archive-article-date">
-  	<time datetime="2017-11-30T10:10:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>其实，Hexo生成的文件里面是有一个.gitignore的，所以它的本意应该也是想我们把这些文件放到GitHub上存放的。</p>
-<p>但是考虑到如果每个GitHub Pages都需要额外的一个仓库存放这些文件，就显得特别冗余了。这个时候就可以用分支的思路！</p>
-<p>一个分支用来存放Hexo生成的网站原始的文件，另一个分支用来存放生成的静态网页。<br>
-        
-          <a class="article-more-a" href="/2017/11/30/换电脑怎么更新博客？/#more">more >></a>
-        
-      
-
-      
-    </p></div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/30/换电脑怎么更新博客？/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-多设备同步hexo博客" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/30/多设备同步hexo博客/">多设备同步hexo博客</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/30/多设备同步hexo博客/" class="archive-article-date">
-  	<time datetime="2017-11-30T09:25:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>多设备同步hexo搭建的Github博客</p>
-<p>多设备同步</p>
-<p>同步思路与Github推拉源码思路相同，使用git指令，保持本地的博客文件与Github上的博客文件相同即可，其步骤如下：</p>
-<pre><code>使用hexo搭建部署Github博客
-</code></pre>
-        
-          <a class="article-more-a" href="/2017/11/30/多设备同步hexo博客/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">hexo</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/30/多设备同步hexo博客/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-test" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/11/30/test/">test</a>
-    </h1>
-  
-
-        
-        <a href="/2017/11/30/test/" class="archive-article-date">
-  	<time datetime="2017-11-30T03:33:50.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-11-30</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>yssdjsdlgjsdkjlsjglsjl</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">test</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2017/11/30/test/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
   
   
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/page/3/">&laquo; Prev</a><a class="page-number" href="/">1</a><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span>
-    </nav>
+  
+
+  
+
+  
+
   
 
 
@@ -800,8 +309,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
