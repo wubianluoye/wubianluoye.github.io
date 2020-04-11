@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
   <title>express摸文档之路 | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="** 一、静态目录设置  nodejs中没有像apache等的提供静态文件夹，需要自己设置。 静态文件夹也可以设置多个，只需要app.use()多个即可。  1234567const express = require(&amp;apos;epxress&amp;apos;)const app = express()app.use(&amp;apos;/static&amp;apos;,express.static(__dirn">
+  <meta name="description" content="一、静态目录设置 nodejs中没有像apache等的提供静态文件夹，需要自己设置。 静态文件夹也可以设置多个，只需要app.use()多个即可。  1234567const express = require(&amp;apos;epxress&amp;apos;)const app = express()app.use(&amp;apos;/static&amp;apos;,express.static(__dirname+">
 <meta name="keywords" content="nodejs">
 <meta property="og:type" content="article">
 <meta property="og:title" content="express摸文档之路">
 <meta property="og:url" content="https://github.com/wubianluoye/2020/03/28/express/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="** 一、静态目录设置  nodejs中没有像apache等的提供静态文件夹，需要自己设置。 静态文件夹也可以设置多个，只需要app.use()多个即可。  1234567const express = require(&amp;apos;epxress&amp;apos;)const app = express()app.use(&amp;apos;/static&amp;apos;,express.static(__dirn">
+<meta property="og:description" content="一、静态目录设置 nodejs中没有像apache等的提供静态文件夹，需要自己设置。 静态文件夹也可以设置多个，只需要app.use()多个即可。  1234567const express = require(&amp;apos;epxress&amp;apos;)const app = express()app.use(&amp;apos;/static&amp;apos;,express.static(__dirname+">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-04-11T09:07:03.213Z">
+<meta property="og:updated_time" content="2020-04-11T09:16:56.141Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="express摸文档之路">
-<meta name="twitter:description" content="** 一、静态目录设置  nodejs中没有像apache等的提供静态文件夹，需要自己设置。 静态文件夹也可以设置多个，只需要app.use()多个即可。  1234567const express = require(&amp;apos;epxress&amp;apos;)const app = express()app.use(&amp;apos;/static&amp;apos;,express.static(__dirn">
+<meta name="twitter:description" content="一、静态目录设置 nodejs中没有像apache等的提供静态文件夹，需要自己设置。 静态文件夹也可以设置多个，只需要app.use()多个即可。  1234567const express = require(&amp;apos;epxress&amp;apos;)const app = express()app.use(&amp;apos;/static&amp;apos;,express.static(__dirname+">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -171,15 +171,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><em>**</em> 一、静态目录设置</p>
-<ol>
+        <h3 id="一、静态目录设置"><a href="#一、静态目录设置" class="headerlink" title="一、静态目录设置"></a>一、静态目录设置</h3><ul>
 <li>nodejs中没有像apache等的提供静态文件夹，需要自己设置。</li>
 <li>静态文件夹也可以设置多个，只需要app.use()多个即可。</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;epxress&apos;)</span><br><span class="line">const app = express()</span><br><span class="line">app.use(&apos;/static&apos;,express.static(__dirname+&apos;/public&apos;))</span><br><span class="line"></span><br><span class="line">// &apos;/static&apos; 则localhose:3000/static访问到静态文件夹位置</span><br><span class="line">// 也可以不写，则默认访问根目录时，都能访问到静态文件夹位置</span><br><span class="line">// static(__dirname+&apos;/public&apos;)) // &apos;/public&apos;为本地的需要作为静态文件夹的目录</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>*** 二、req属性</p>
-<ol>
+<h3 id="二、req属性"><a href="#二、req属性" class="headerlink" title="二、req属性"></a>二、req属性</h3><ul>
 <li><p>当req是 <em>post</em> 请求时，获取参数需要用到插件<code>body-parser</code></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">npm install body-parser</span><br><span class="line"></span><br><span class="line">const bodyParser = require(&apos;body-parser&apos;)</span><br><span class="line"></span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">app.use(bodyParser.urlencoded(&#123;extended: false&#125;))</span><br><span class="line">app.use(bodyParser.json())</span><br><span class="line"></span><br><span class="line">app.post(&apos;/home&apos;, (req, res) =&gt; &#123;</span><br><span class="line">	console.log(req.body) // 获取到传回来的参数（json格式）</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
@@ -193,33 +191,31 @@
 </li>
 <li><p>req.path 获取请求URL</p>
 </li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">// example.com/users?sort=desc</span><br><span class="line">console.log(req.path)</span><br><span class="line">// =&gt; &apos;/users&apos;</span><br></pre></td></tr></table></figure>
-<ol start="6">
+<ul>
 <li>req.route 获取当前路由的路由信息</li>
-</ol>
-<p>*** 三、res属性</p>
-<ol>
+</ul>
+<h3 id="三、res属性"><a href="#三、res属性" class="headerlink" title="三、res属性"></a>三、res属性</h3><ul>
 <li><p>res.append, 可以用来设置响应头参数 <code>res.append(field [, value])</code><br><code>res.append(&#39;Set-Cookie&#39;, &#39;foo=bar; Path=/; HttpOnly&#39;)</code></p>
 </li>
 <li><p>res.cookie, 设置响应头cookie参数 <code>res.cookie(name, value [, options])</code><br><code>res.cookie(&#39;name&#39;, &#39;tobi&#39;, { domain: &#39;.example.com&#39;, path: &#39;/admin&#39;, secure: true })</code></p>
 </li>
-</ol>
-<p>3.res.json(obj),可以将数据以json格式返回，但也得传的是json格式</p>
-<ol start="4">
-<li>res.render(), 可以渲染一个文件到浏览器 <code>res.render(view [, locals] [, callback])</code></li>
+<li><p>res.json(obj),可以将数据以json格式返回，但也得传的是json格式</p>
+</li>
+<li><p>res.render(), 可以渲染一个文件到浏览器 <code>res.render(view [, locals] [, callback])</code></p>
+</li>
 <li>res.download(file) 访问时，浏览器自动下载文件</li>
 <li>res.type 设置mime类型<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">res.type(&apos;.html&apos;)</span><br><span class="line">// =&gt; &apos;text/html&apos;</span><br></pre></td></tr></table></figure>
 </li>
-</ol>
-<p>*** 三、router</p>
-<ol>
+</ul>
+<h3 id="三、router"><a href="#三、router" class="headerlink" title="三、router"></a>三、router</h3><ul>
 <li><p>通过<code>const router = express.Router()</code>来获取router，再通过router.get或router.post等方式设置路由路径。<br>它可以接收3个参数(req,res,next),其中，前2两个与上面一样，next可以用来处理一些其他状态，<br>但是需要注意的是，若参数中有加next，那么在最后必须加上next(),不然路由无法继续。<br>一般用来做中间件过滤器。</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">// index.js</span><br><span class="line"></span><br><span class="line">router.get(&apos;/name&apos;, (req, res, next) =&gt; &#123;</span><br><span class="line">	console.log(req.path)</span><br><span class="line">	res.send(&apos;user: &apos;+req.params.id)</span><br><span class="line">	// do things</span><br><span class="line">	next()</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>引用router时，通过app.use(require(‘/router/index.js’))<br>这时，访问localhost:3000/name时，路由会自定去找到index.js中的/name路径。</p>
 </li>
-</ol>
+</ul>
 <p>也可写成这样app.use(‘/user’,require(‘/router/index.js’))<br>那么就需要访问localhost:3000/user/name才能定位到它了。</p>
 
       

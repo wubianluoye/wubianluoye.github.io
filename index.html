@@ -169,11 +169,10 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><em>**</em> 一、静态目录设置</p>
-<ol>
+        <h3 id="一、静态目录设置"><a href="#一、静态目录设置" class="headerlink" title="一、静态目录设置"></a>一、静态目录设置</h3><ul>
 <li>nodejs中没有像apache等的提供静态文件夹，需要自己设置。</li>
 <li>静态文件夹也可以设置多个，只需要app.use()多个即可。</li>
-</ol>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">const express = require(&apos;epxress&apos;)</span><br><span class="line">const app = express()</span><br><span class="line">app.use(&apos;/static&apos;,express.static(__dirname+&apos;/public&apos;))</span><br><span class="line"></span><br><span class="line">// &apos;/static&apos; 则localhose:3000/static访问到静态文件夹位置</span><br><span class="line">// 也可以不写，则默认访问根目录时，都能访问到静态文件夹位置</span><br><span class="line">// static(__dirname+&apos;/public&apos;)) // &apos;/public&apos;为本地的需要作为静态文件夹的目录</span><br></pre></td></tr></table></figure>
         
           <a class="article-more-a" href="/2020/03/28/express/#more">more >></a>
