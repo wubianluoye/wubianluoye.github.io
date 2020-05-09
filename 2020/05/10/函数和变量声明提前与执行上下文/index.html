@@ -8,18 +8,18 @@
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
   <title>函数和变量声明提前与执行上下文 | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="一、 ——————(`)console.log(bar); // ???var bar = 1;function bar(){  console.log(“bar”);} // 结果： Function(`)">
+  <meta name="description" content="一、 ——————1234567console.log(bar); // ???var bar = 1;function bar()&amp;#123;  console.log(&amp;quot;bar&amp;quot;);&amp;#125;// 结果： Function">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="函数和变量声明提前与执行上下文">
 <meta property="og:url" content="https://github.com/wubianluoye/2020/05/10/函数和变量声明提前与执行上下文/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="一、 ——————(`)console.log(bar); // ???var bar = 1;function bar(){  console.log(“bar”);} // 结果： Function(`)">
+<meta property="og:description" content="一、 ——————1234567console.log(bar); // ???var bar = 1;function bar()&amp;#123;  console.log(&amp;quot;bar&amp;quot;);&amp;#125;// 结果： Function">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-05-09T12:50:10.166Z">
+<meta property="og:updated_time" content="2020-05-09T13:04:14.239Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="函数和变量声明提前与执行上下文">
-<meta name="twitter:description" content="一、 ——————(`)console.log(bar); // ???var bar = 1;function bar(){  console.log(“bar”);} // 结果： Function(`)">
+<meta name="twitter:description" content="一、 ——————1234567console.log(bar); // ???var bar = 1;function bar()&amp;#123;  console.log(&amp;quot;bar&amp;quot;);&amp;#125;// 结果： Function">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -171,46 +171,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h6 id="一、-——————"><a href="#一、-——————" class="headerlink" title="一、 ——————"></a>一、 ——————</h6><p>(<code>`</code>)<br>console.log(bar); // ???<br>var bar = 1;<br>function bar(){<br>  console.log(“bar”);<br>}</p>
-<p>// 结果： Function<br>(<code>`</code>)</p>
+        <h6 id="一、-——————"><a href="#一、-——————" class="headerlink" title="一、 ——————"></a>一、 ——————</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(bar); // ???</span><br><span class="line">var bar = 1;</span><br><span class="line">function bar()&#123;</span><br><span class="line">  console.log(&quot;bar&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// 结果： Function</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<p>(<code>)
-伪代码
-1.声明阶段
-function bar
-var bar
-2.执行阶段
-console.log(bar) // fn
-bar=1
-从上往下顺序执行
-(</code>)</p>
-<h6 id="二、-——————"><a href="#二、-——————" class="headerlink" title="二、 ——————"></a>二、 ——————</h6><p>(<code>)
-console.log(foo); // ???
-var foo = 1;
-console.log(foo); // ???
-function foo(){
-    console.log(&quot;foo&quot;);
-}
-// 结果： Function,1
-(</code>)</p>
-<p>(<code>)
-伪代码
-1.声明阶段
-function foo
-var foo
-2.执行阶段
-console.log(foo) //fn
-foo=1
-console.log(foo) // 1
-从上往下顺序执行
-(</code>)</p>
-<p>(<code>`</code>)<br>var bbz=1<br>function bbz (){}<br>console.log(bbz)<br>bbz=100</p>
-<p>// function bbz<br>// bbz<br>// bbz=1<br>// console.log(bbz)<br>// bbz=100<br>(<code>`</code>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">伪代码</span><br><span class="line">1.声明阶段</span><br><span class="line">function bar</span><br><span class="line">var bar</span><br><span class="line">2.执行阶段</span><br><span class="line">console.log(bar) // fn</span><br><span class="line">bar=1</span><br><span class="line">从上往下顺序执行</span><br></pre></td></tr></table></figure>
+<h6 id="二、-——————"><a href="#二、-——————" class="headerlink" title="二、 ——————"></a>二、 ——————</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">console.log(foo); // ???</span><br><span class="line">var foo = 1;</span><br><span class="line">console.log(foo); // ???</span><br><span class="line">function foo()&#123;</span><br><span class="line">    console.log(&quot;foo&quot;);</span><br><span class="line">&#125;</span><br><span class="line">// 结果： Function,1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">伪代码</span><br><span class="line">1.声明阶段</span><br><span class="line">function foo</span><br><span class="line">var foo</span><br><span class="line">2.执行阶段</span><br><span class="line">console.log(foo) //fn</span><br><span class="line">foo=1</span><br><span class="line">console.log(foo) // 1</span><br><span class="line">从上往下顺序执行</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var bbz=1</span><br><span class="line">function bbz ()&#123;&#125;</span><br><span class="line">console.log(bbz)</span><br><span class="line">bbz=100</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// function bbz</span><br><span class="line">// bbz</span><br><span class="line">// bbz=1</span><br><span class="line">// console.log(bbz)</span><br><span class="line">// bbz=100</span><br></pre></td></tr></table></figure>
 <h6 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h6><p>一个执行上下文的生命周期可以分为两个阶段:<br>1、声明<br>2、执行</p>
 <blockquote>
 <p>js从上往下执行，首先会处理函数声明，其次会处理变量声明。<br>在执行阶段时，后面的赋值将覆盖掉前面的function。</p>
 </blockquote>
-<p>引用：<br><a href="https://github.com/mqyqingfeng/Blog/issues/5">冴羽-JavaScript深入之变量对象</a></p>
+<h5 id="引用："><a href="#引用：" class="headerlink" title="引用："></a>引用：</h5><p><a href="https://github.com/mqyqingfeng/Blog/issues/5">冴羽-JavaScript深入之变量对象</a></p>
 
       
 
