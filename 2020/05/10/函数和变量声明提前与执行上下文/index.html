@@ -6,20 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="https://github.com/wubianluoye">
-  <title>移动端将手机输入法中的完成变成搜索功能实现 | wubianluoye</title>
+  <title>函数和变量声明提前与执行上下文 | wubianluoye</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="当我们的移动端想实现如淘宝搜索页面，虚拟键盘有个搜索按钮时。 原生版 1234&amp;lt;form id=&amp;quot;myform&amp;quot; action=&amp;quot;javascript:;&amp;quot;&amp;gt;	&amp;lt;input type=&amp;quot;search&amp;quot; id=&amp;quot;search&amp;quot;&amp;gt;&amp;lt;/form&amp;gt;">
-<meta name="keywords" content="移动端">
+  <meta name="description" content="一、 ——————(`)console.log(bar); // ???var bar = 1;function bar(){  console.log(“bar”);} // 结果： Function(`)">
+<meta name="keywords" content="js">
 <meta property="og:type" content="article">
-<meta property="og:title" content="移动端将手机输入法中的完成变成搜索功能实现">
-<meta property="og:url" content="https://github.com/wubianluoye/2020/03/20/移动端将手机输入法中的完成变成搜索功能实现/index.html">
+<meta property="og:title" content="函数和变量声明提前与执行上下文">
+<meta property="og:url" content="https://github.com/wubianluoye/2020/05/10/函数和变量声明提前与执行上下文/index.html">
 <meta property="og:site_name" content="wubianluoye">
-<meta property="og:description" content="当我们的移动端想实现如淘宝搜索页面，虚拟键盘有个搜索按钮时。 原生版 1234&amp;lt;form id=&amp;quot;myform&amp;quot; action=&amp;quot;javascript:;&amp;quot;&amp;gt;	&amp;lt;input type=&amp;quot;search&amp;quot; id=&amp;quot;search&amp;quot;&amp;gt;&amp;lt;/form&amp;gt;">
+<meta property="og:description" content="一、 ——————(`)console.log(bar); // ???var bar = 1;function bar(){  console.log(“bar”);} // 结果： Function(`)">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2020-03-20T12:29:08.467Z">
+<meta property="og:updated_time" content="2020-05-09T12:50:10.166Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="移动端将手机输入法中的完成变成搜索功能实现">
-<meta name="twitter:description" content="当我们的移动端想实现如淘宝搜索页面，虚拟键盘有个搜索按钮时。 原生版 1234&amp;lt;form id=&amp;quot;myform&amp;quot; action=&amp;quot;javascript:;&amp;quot;&amp;gt;	&amp;lt;input type=&amp;quot;search&amp;quot; id=&amp;quot;search&amp;quot;&amp;gt;&amp;lt;/form&amp;gt;">
+<meta name="twitter:title" content="函数和变量声明提前与执行上下文">
+<meta name="twitter:description" content="一、 ——————(`)console.log(bar); // ???var bar = 1;function bar(){  console.log(“bar”);} // 结果： Function(`)">
   
     <link rel="alternative" href="/atom.xml" title="wubianluoye" type="application/atom+xml">
   
@@ -151,35 +151,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-移动端将手机输入法中的完成变成搜索功能实现" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-函数和变量声明提前与执行上下文" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      移动端将手机输入法中的完成变成搜索功能实现
+      函数和变量声明提前与执行上下文
     </h1>
   
 
         
-        <a href="/2020/03/20/移动端将手机输入法中的完成变成搜索功能实现/" class="archive-article-date">
-  	<time datetime="2020-03-20T12:11:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-20</time>
+        <a href="/2020/05/10/函数和变量声明提前与执行上下文/" class="archive-article-date">
+  	<time datetime="2020-05-10T02:10:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-05-10</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>当我们的移动端想实现如淘宝搜索页面，虚拟键盘有个搜索按钮时。</p>
-<p><code>原生版</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;form id=&quot;myform&quot; action=&quot;javascript:;&quot;&gt;</span><br><span class="line">	&lt;input type=&quot;search&quot; id=&quot;search&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+        <h6 id="一、-——————"><a href="#一、-——————" class="headerlink" title="一、 ——————"></a>一、 ——————</h6><p>(<code>`</code>)<br>console.log(bar); // ???<br>var bar = 1;<br>function bar(){<br>  console.log(“bar”);<br>}</p>
+<p>// 结果： Function<br>(<code>`</code>)</p>
 <a id="more"></a>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&apos;search&apos;).onkeyup = function(event) &#123;</span><br><span class="line">	if(event.keyCode === 13) &#123;</span><br><span class="line">		document.getElementById(&apos;search&apos;).blur();</span><br><span class="line">		// doth</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><code>vue版</code></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">&lt;form action=&quot;javascript:;&quot;&gt;</span><br><span class="line">	&lt;input v-model=&quot;value&quot; @keyup.enter=&quot;search&quot; ref=&quot;search&quot;&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">methods: &#123;</span><br><span class="line">	search() &#123;</span><br><span class="line">		this.$refs.search.blur()</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>首先，需要一个form表单包住我们的搜索框，并禁止表单提交；<br>然后，将input的type设置为search。 然后会发现点击搜索后，虚拟键盘不会自动收回;<br>所以，还需要添加一个点击了搜索按钮后，关闭虚拟按键。也就是让input失去焦点。</p>
+<p>(<code>)
+伪代码
+1.声明阶段
+function bar
+var bar
+2.执行阶段
+console.log(bar) // fn
+bar=1
+从上往下顺序执行
+(</code>)</p>
+<h6 id="二、-——————"><a href="#二、-——————" class="headerlink" title="二、 ——————"></a>二、 ——————</h6><p>(<code>)
+console.log(foo); // ???
+var foo = 1;
+console.log(foo); // ???
+function foo(){
+    console.log(&quot;foo&quot;);
+}
+// 结果： Function,1
+(</code>)</p>
+<p>(<code>)
+伪代码
+1.声明阶段
+function foo
+var foo
+2.执行阶段
+console.log(foo) //fn
+foo=1
+console.log(foo) // 1
+从上往下顺序执行
+(</code>)</p>
+<p>(<code>`</code>)<br>var bbz=1<br>function bbz (){}<br>console.log(bbz)<br>bbz=100</p>
+<p>// function bbz<br>// bbz<br>// bbz=1<br>// console.log(bbz)<br>// bbz=100<br>(<code>`</code>)</p>
+<h6 id="三、总结"><a href="#三、总结" class="headerlink" title="三、总结"></a>三、总结</h6><p>一个执行上下文的生命周期可以分为两个阶段:<br>1、声明<br>2、执行</p>
+<blockquote>
+<p>js从上往下执行，首先会处理函数声明，其次会处理变量声明。<br>在执行阶段时，后面的赋值将覆盖掉前面的function。</p>
+</blockquote>
+<p>引用：<br><a href="https://github.com/mqyqingfeng/Blog/issues/5">冴羽-JavaScript深入之变量对象</a></p>
 
       
 
@@ -193,7 +224,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">移动端</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
@@ -212,18 +243,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/03/20/vue项目在同一局域网无法打开解决方法/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          vue项目在同一局域网移动端无法打开解决方法
-        
-      </div>
-    </a>
   
-  
-    <a href="/2020/01/11/Promise和Async、Await/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">Pormise与Async/Await</div>
+    <a href="/2020/03/28/express/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">express摸文档之路</div>
       <i class="icon-circle-right"></i>
     </a>
   
